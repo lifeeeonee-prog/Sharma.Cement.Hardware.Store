@@ -185,60 +185,78 @@
     }
 
     /* ==========================================================================
-       3. HERO SHOWCASE (Background: schs1.jpeg)
-       ========================================================================== */
-    .hero-showcase {
-      position: relative;
-      /* Dual background strings to cleanly catch case-sensitive image extensions on servers */
-      background-image: linear-gradient(rgba(11, 37, 69, 0.82), rgba(11, 37, 69, 0.82)), url("schs1.jpeg");
-      background-image: linear-gradient(rgba(11, 37, 69, 0.82), rgba(11, 37, 69, 0.82)), url("schs1.JPEG");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      min-height: 65vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #ffffff;
-      padding: 80px 20px;
-    }
+      /* ==========================================================================
+   HERO PANEL SHOWCASE (Background: cement4-item.jpg)
+   ========================================================================== */
+.hero-showcase {
+  position: relative;
+  /* Uses your sand/bajri/stone asset (cement4-item.jpg) with a dark overlay for maximum text readability */
+  background-image: linear-gradient(rgba(7, 24, 43, 0.85), rgba(7, 24, 43, 0.85)), url("cement4-item.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax tracking effect for premium look */
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 80px 20px;
+}
 
-    .hero-inner-content {
-      max-width: 850px;
-      width: 100%;
-    }
+.hero-inner-content {
+  max-width: 850px;
+  width: 100%;
+}
 
-    .hero-showcase h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      font-weight: 800;
-      line-height: 1.25;
-      letter-spacing: -0.5px;
-    }
+.hero-showcase h1 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
 
-    .hero-showcase p {
-      font-size: 1.15rem;
-      margin-bottom: 30px;
-      color: #dae3e5;
-    }
+.hero-showcase p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: #dae3e5;
+  line-height: 1.6;
+}
 
-    .explore-btn {
-      display: inline-block;
-      background-color: #ffcc00;
-      color: #0b2545;
-      padding: 14px 35px;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: background-color 0.3s ease;
-    }
+.explore-btn {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #0b2545;
+  padding: 14px 35px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-    .explore-btn:hover {
-      background-color: #e6b800;
-    }
+.explore-btn:hover {
+  background-color: #e6b800;
+  transform: translateY(-2px);
+}
+
+/* Mobile tuning to keep the background from scaling awkwardly */
+@media (max-width: 768px) {
+  .hero-showcase {
+    background-attachment: scroll; /* Disables parallax on mobile to preserve loading speeds */
+    min-height: 60vh;
+    padding: 60px 15px;
+  }
+  .hero-showcase h1 {
+    font-size: 2.2rem;
+  }
+  .hero-showcase p {
+    font-size: 1.05rem;
+  }
 
     /* ==========================================================================
        4. MATERIAL SECTIONS (Background: cement2-item.jpg)
@@ -481,11 +499,12 @@
 </head>
 <body>
 
-  <!-- Top Contact Details Info Bar Block -->
-  <div class="utility-bar">
-    <span>📍 Location: Near JK Bank Kambal Danga Udhampur (J&K)</span>
-    <span>📞 Call: <a href="tel:9622128720">9622128720</a> | <a href="tel:9797560287">9797560287</a> | <a href="tel:9419175521">9419175521</a></span>
-  </div>
+ <!-- Top Informational Contact Utility Bar -->
+<div class="utility-bar">
+  <span>📍 Location: Near JK Bank Kambal Danga Udhampur (J&K)</span>
+  <span>✉️ Email: <EMAIL: sharma.cement.hardware@gmail.com">sharma.cement.hardware.@gmail.com</a></span>
+  <span>📞 Call: <a href="tel:9622128720">9622128720</a> | <a href="tel:9797560287">9797560287</a> | <a href="tel:9419175521">9419175521</a></span>
+</div>
 
   <!-- Main Sticky Header Navigation Frame -->
   <header>
