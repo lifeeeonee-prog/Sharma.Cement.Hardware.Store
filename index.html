@@ -6,7 +6,6 @@
   <title>Sharma Cement & Hardware Store</title>
 
   <style>
-    /* SMOOTH UP/DOWN NAVIGATION MOVEMENT */
     html {
       scroll-behavior: smooth;
     }
@@ -14,11 +13,11 @@
     :root {
       --primary-dark: #0F172A;   
       --accent-gold: #FF5500;    
+      --whatsapp-green: #25D366;
       --text-main: #1E293B;      
       --bg-light: #FFFFFF;       
     }
 
-    /* Clean Simple Calibri Typography */
     body {
       font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
       margin: 0;
@@ -61,7 +60,6 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    /* HEADER FONT COLOURS: VIBRANT HIGH-CONTRAST WHITE */
     .logo {
       color: #FFFFFF !important;
       font-size: 24px;
@@ -71,6 +69,11 @@
 
     .logo span {
       color: var(--accent-gold);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
     }
 
     nav a {
@@ -85,7 +88,7 @@
     nav a:hover {
       color: var(--accent-gold) !important;
     }
-/* WHATSAPP ACTION NAV BUTTON */
+
     .btn-whatsapp-nav {
       background-color: var(--whatsapp-green);
       color: #FFFFFF !important;
@@ -102,9 +105,9 @@
 
     .btn-whatsapp-nav:hover {
       opacity: 0.9;
-      color: #FFFFFF !important;
     }
-    /* DYNAMIC BACKGROUND BANNER USING YOUR HOME STOREFRONTS (schs1 & schs2) */
+
+    /* FIXED BACKGROUND HERO FILE EXTENSIONS TO .JPG */
     .hero {
       position: relative;
       padding: 140px 5%;
@@ -132,10 +135,10 @@
 
     @keyframes alternateBanner {
       0%, 45% {
-        background-image: linear-gradient(rgba(15, 23, 42, 0.70), rgba(15, 23, 42, 0.70)), url('schs1.jpeg');
+        background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('schs1.jpg');
       }
       55%, 100% {
-        background-image: linear-gradient(rgba(15, 23, 42, 0.70), rgba(15, 23, 42, 0.70)), url('schs2.jpeg');
+        background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('schs2.jpg');
       }
     }
 
@@ -299,7 +302,7 @@
       border: 1px solid #E2E8F0;
       border-radius: 8px;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0 auto 30px auto;
       padding: 40px;
       text-align: left;
       box-shadow: 0 4px 15px rgba(0,0,0,0.02);
@@ -329,7 +332,7 @@
     .contact-item a:hover {
       text-decoration: underline;
     }
-/* WHATSAPP BLOCK BUTTON */
+
     .btn-whatsapp-block {
       display: inline-flex;
       align-items: center;
@@ -350,7 +353,7 @@
       background-color: #1ebd58;
       text-decoration: none !important;
     }
-    /* GOOGLE MAPS WRAPPER */
+
     .map-container {
       width: 100%;
       max-width: 1100px;
@@ -367,6 +370,7 @@
       border: 0;
       display: block;
     }
+
     footer {
       background: var(--primary-dark);
       color: #94A3B8;
@@ -379,17 +383,15 @@
 </head>
 <body>
 
-  <!-- Top Contact Strip -->
   <div class="top-bar">
     <div>Location: Near JK Bank Kambal Danga Udhampur</div>
     <div>
-      📞 Call: <a href="Call: 9622128720,9797560287,9419175521">9622128720,9797560287,9419175521</a> 
+      📞 Call: <a href="9622128720, 9797560287, 9419175521">9622128720, 9797560287, 9419175521</a> 
       | 
-      ✉️ Email: <a href=" Email: sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a>
+      ✉️ Email: <a href="Email: sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a>
     </div>
   </div>
 
-  <!-- Header Navigation -->
   <header>
     <div class="logo">SHARMA CEMENT & HARDWARE STORE<span></span></div>
     <nav>
@@ -397,10 +399,13 @@
       <a href="#about">About Details</a>
       <a href="#categories">Material Categories</a>
       <a href="#contact">Get in Touch</a>
+      <!-- Fixed WhatsApp API Format Link -->
+      <a href="https://api.whatsapp.com/send?Phone=9622128720" target="_blank" class="btn-whatsapp-nav">
+        💬 WhatsApp
+      </a>
     </nav>
   </header>
 
-  <!-- Hero Slider Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>Reliable Material Supply For Sustainable Structures</h1>
@@ -409,11 +414,10 @@
     </div>
   </section>
 
-  <!-- Statistics Block -->
   <section class="stats-container">
     <div class="stat-box">
       <div class="stat-number">30+</div>
-      <div class="stat-label">Years of Business</div>
+      <div class="stat-label">Years of Busiiness</div>
     </div>
     <div class="stat-box">
       <div class="stat-number">100%</div>
@@ -425,51 +429,49 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="main-section">
     <h2 class="section-headline">About Our Store</h2>
     <p class="section-sub">A legacy of trust and premium structural materials.</p>
     <div class="about-text">
-      Welcome to Sharma Cement & Hardware Store. For over 30+ years, we have been a trusted cornerstone for local contractors, engineers, and home builders. We specialize in distributing top-tier construction supplies, featuring authorized high-durability cement, premium water tank solutions, high-grade brick inventory, and specialized wholesale construction equipment services. Our commitment to absolute quality control and clear, wholesale pricing keeps your structures sound for decades.
+      Welcome to Sharma Cement & Hardware Store. For over 30 years, we have been a trusted cornerstone for local contractors, engineers, and home builders. We specialize in distributing top-tier construction supplies, featuring authorized high-durability Ambuja Kawach cement, premium water tank solutions, high-grade brick inventory, and specialized wholesale construction equipment services. Our commitment to absolute quality control and clear, wholesale pricing keeps your structures sound for decades.
     </div>
   </section>
 
-  <!-- Material Categories Section -->
   <section id="categories" class="main-section" style="border-top: 1px solid #E2E8F0; padding-top: 60px;">
     <h2 class="section-headline">Our Primary Material & Equipment Divisions</h2>
     <p class="section-sub">Authorized stock and heavy infrastructure logistics handled directly by our sales yard.</p>
     
     <div class="grid-layout">
-      <!-- Card 1: Cement Division (Your original Ambuja Bag photo) -->
+      <!-- Card 1: Fixed Cement Image Extension -->
       <div class="product-card">
-        <img src="cement-item.jpg.jpeg" alt="Premium Ambuja Cement Supplies">
+        <img src="cement-item.jpg" alt="Premium Cement Supplies">
         <div class="card-content">
-          <h3>Ambuja Kawach Cement</h3>
+          <h3> Cement</h3>
           <p>Authorized stock of high-strength, water-resistant premium grade cement optimized for strong foundations and concrete structures.</p>
         </div>
       </div>
 
-      <!-- Card 2: Water Tank Supplies (schs3.jpeg) -->
+      <!-- Card 2: Fixed to .jpg -->
       <div class="product-card">
-        <img src="schs3.jpeg" alt="Sharma Water Tank Services">
+        <img src="schs3.jpg" alt="Sharma Water Tank Services">
         <div class="card-content">
           <h3>Logistics & Water Systems</h3>
           <p>Complete supply pathways for industrial water tank platforms and site infrastructure assets directly matching your project demands.</p>
         </div>
       </div>
 
-      <!-- Card 3: Mixer Machine Operations (schs4.jpeg) -->
+      <!-- Card 3: Fixed to .jpg -->
       <div class="product-card">
-        <img src="schs4.jpeg" alt="Concrete Mixer Machine Equipment">
+        <img src="schs4.jpg" alt="Concrete Mixer Machine Equipment">
         <div class="card-content">
           <h3>Concrete Mixer Machine Fleet</h3>
           <p>Heavy-duty, high-performance site machinery rentals and distribution to ensure uniform mortar and concrete mixing layouts.</p>
         </div>
       </div>
 
-      <!-- Card 4: JCB Excavation Services (schs5.jpeg) -->
+      <!-- Card 4: Fixed to .jpg -->
       <div class="product-card">
-        <img src="schs5.jpeg" alt="JCB Heavy Duty Excavator Machine">
+        <img src="schs5.jpg" alt="JCB Heavy Duty Excavator Machine">
         <div class="card-content">
           <h3>Heavy Machinery & JCB Logistics</h3>
           <p>Professional earthmoving and excavation equipment assets optimized for fast site clearance, foundation trenching, and volume leveling.</p>
@@ -478,46 +480,46 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact" class="main-section" style="border-top: 1px solid #E2E8F0; padding-top: 60px;">
-    <h2 class="section-headline">Get In Touch</h2>
-    <p class="section-sub">Contact our sales desk directly for wholesale rates, material site drop-offs, and machine bookings.</p>
+    <h2 class="section-headline">Get In Touch & Find Us</h2>
+    <p class="section-sub">Contact our sales desk directly for wholesale rates, material site drop-offs, or navigate directly to our yard.</p>
     
     <div class="contact-box">
       <div class="contact-item">
         <strong>Main Store Numbers</strong>
-        <a href="Phone: 9622128720,600531055"> 96221 28720,6005331055</a><br>
-        <a href="Phone:+919797560287" style="font-size:16px;">+91 97975 60287</a> | 
-        <a href="Phone:+919419175521" style="font-size:16px;">+91 94191 75521</a>
+        <a href="Phone:9622128720, 6005331055">+91 96221 28720, 6005331055</a><br>
+        <a href="Phone:9797560287" style="font-size:16px;"> 97975 60287</a> | 
+        <a href="Phone:9419175521" style="font-size:16px;"> 94191 75521</a>
       </div>
       
       <div class="contact-item">
         <strong>Official Email Address</strong>
-        <a href="Email: sharma.cement.hardware@gmail.com">Email: sharma.cement.hardware@gmail.com</a>
+        <a href="✉️ Email: sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a>
       </div>
 
-      <div class="contact-item" style="margin-bottom: 0;">
+      <div class="contact-item">
         <strong>Our Business Hours</strong>
         <span style="font-size: 16px; color: #475569; font-weight: 500;">Monday - Sunday: 8:00 AM - 7:00 PM </span>
       </div>
-    </div>
-    <!-- WhatsApp Block Button -->
+
       <div style="text-align: center; border-top: 1px solid #E2E8F0; padding-top: 20px; margin-top: 20px;">
-        <a href="https://api.whatsapp.com/send?phone=919622128720" target="_blank" class="btn-whatsapp-block">
+        <!-- Fixed WhatsApp API Format Link -->
+        <a href="https://api.whatsapp.com/send?phone=9622128720" target="_blank" class="btn-whatsapp-block">
           💬 Message Us on WhatsApp
- </a>
+        </a>
       </div>
-    </div> 
-  </section>
-<!-- Live Google Maps Frame Embed (Centered to Kambal Danga, Udhampur near J&K Bank based on shop banner details) -->
+    </div>
+
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.73479406812!2d75.0407289!3d32.9477323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780479370137!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+      <iframe 
+        src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.73479406812!2d75.0407289!3d32.9477323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780480994127!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
         allowfullscreen="" 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
   </section>
+
   <footer>
     <p>© 2026 Sharma Cement & Hardware Store. Built for heavy-duty business performance.</p>
   </footer>
