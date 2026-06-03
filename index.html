@@ -1,137 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Connect Modern Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
-<style>
-  /* Apply fonts across the entire website */
-  body {
-    font-family: 'Inter', sans-serif;
-    color: #333333;
-    margin: 0;
-    padding: 0;
-  }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharma Cement & Hardware Store</title>
   
-  /* Bold, strong font for all headings */
-  h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #111111;
-  }
-</style>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharma Cement & Hardware Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Caveat:wght=700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Courier Prime', monospace;
-            background-color: #f7f7f7;
-            color: #333;
-            margin: 0;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-family: 'Caveat', cursive;
-            font-size: 3.5rem;
-            margin-bottom: 5px;
-            color: #111;
-        }
-        .tagline {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            letter-spacing: -0.5px;
-        }
-        .divider {
-            border-top: 2px dashed #777;
-            margin: 30px auto;
-            width: 80%;
-        }
-        .business-link {
-            display: block;
-            background: white;
-            color: #222;
-            text-decoration: none;
-            padding: 16px;
-            margin: 12px 0;
-            border-radius: 50px;
-            border: 1px dashed #999;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 0.2s ease;
-        }
-        .business-link:hover {
-            background: #222;
-            color: white;
-            border-style: solid;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #777;
-        }
-    </style>
+  <!-- Premium, readable business typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Reset & Colors */
+    :root {
+      --primary-dark: #111625;   /* Deep slate corporate blue */
+      --accent-gold: #F2A900;    /* Industrial hardware yellow/gold */
+      --text-main: #2D3748;      /* Soft charcoal for easy reading */
+      --bg-light: #F8FAFC;       /* Off-white background */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-main);
+      background-color: var(--bg-light);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    /* Top Bar Infostrip */
+    .top-bar {
+      background-color: var(--accent-gold);
+      color: var(--primary-dark);
+      padding: 8px 5%;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    /* Main Header Navigation */
+    header {
+      background: var(--primary-dark);
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      color: #FFFFFF;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent-gold);
+    }
+
+    nav a {
+      color: #E2E8F0;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent-gold);
+    }
+
+    /* Large Corporate Hero Banner */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(17, 22, 37, 0.85), rgba(17, 22, 37, 0.85)), url('hero-bg.jpg') no-repeat center center/cover;
+      padding: 120px 5%;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #CBD5E0;
+      max-width: 750px;
+      margin: 0 auto 35px auto;
+      line-height: 1.6;
+    }
+
+    .btn-action {
+      background: var(--accent-gold);
+      color: var(--primary-dark);
+      padding: 15px 35px;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 4px;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      background: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* Trust Statistics Cards Container */
+    .stats-container {
+      background: #FFFFFF;
+      padding: 35px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      max-width: 1100px;
+      margin: -40px auto 0 auto;
+      position: relative;
+      z-index: 10;
+      border-radius: 6px;
+      border-bottom: 4px solid var(--accent-gold);
+    }
+
+    .stat-box {
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #718096;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* Category Showcase Section */
+    .main-section {
+      max-width: 1200px;
+      margin: 90px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .section-headline {
+      font-size: 32px;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-headline::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-gold);
+      margin: 10px auto 0 auto;
+    }
+
+    .section-sub {
+      color: #718096;
+      font-size: 16px;
+      margin-bottom: 60px;
+    }
+
+    .grid-layout {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .product-card {
+      background: #FFFFFF;
+      border-radius: 6px;
+      overflow: hidden;
+      width: 360px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      border: 1px solid #E2E8F0;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 25px;
+    }
+
+    .card-content h3 {
+      font-size: 21px;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .card-content p {
+      color: #4A5568;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Corporate Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #A0AEC0;
+      padding: 50px 5%;
+      text-align: center;
+      font-size: 14px;
+      border-top: 4px solid var(--accent-gold);
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
 </head>
-<!-- Products Section Start -->
-<section style="max-width: 1100px; margin: 40px auto; padding: 20px; text-align: center;">
-  <h2>Our Featured Categories</h2>
-  <p style="color: #666; margin-bottom: 30px;">Premium quality building materials and reliable tools for your construction needs.</p>
+<body>
 
-  <!-- This container organizes items side-by-side -->
-  <div style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
-    
-    <!-- Item 1: Cement -->
-    <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; width: 300px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left;">
-      <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500" alt="Construction materials" style="width: 100%; height: 200px; object-fit: cover;">
-      <div style="padding: 20px;">
-        <h3 style="margin-top: 0; margin-bottom: 10px;">Premium Cement</h3>
-        <p style="color: #555; font-size: 14px; line-height: 1.5;">Top-grade, high-strength structural cement perfect for foundations, plastering, and bricklaying.</p>
-      </div>
-    </div>
-
-    <!-- Item 2: Hardware & Tools -->
-    <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; width: 300px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left;">
-      <img src="https://images.unsplash.com/photo-1534224039826-c7a0dea0e66a?w=500" alt="Hardware tools" style="width: 100%; height: 200px; object-fit: cover;">
-      <div style="padding: 20px;">
-        <h3 style="margin-top: 0; margin-bottom: 10px;">Hardware & Tools</h3>
-        <p style="color: #555; font-size: 14px; line-height: 1.5;">A massive inventory of robust hand tools, fasteners, power tool attachments, and plumbing equipment.</p>
-      </div>
-    </div>
-
+  <!-- Top Info Strip -->
+  <div class="top-bar">
+    <div>📍 Serving Premium Infrastructure Needs</div>
+    <div>📞 Support: +91 XXXXX XXXXX | ✉️ info@sharmacementkd.com</div>
   </div>
-</section>
-<!-- Products Section End -->
-    <body>
 
-    <div class="container">
-        <h1>SHARMA CEMENT & HARDWARE STORE </h1>
-        
-        <p class="tagline"> Quality Building Materials & Construction Material </p>
-        
-        <div class="divider"></div>
+  <!-- Header Navigation -->
+  <header>
+    <div class="logo">SHARMA<span>.</span></div>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">About Details</a>
+      <a href="#">Material Categories</a>
+      <a href="#">Get in Touch</a>
+    </nav>
+  </header>
 
-        <a class="business-link" href="tel:+919622128720" target="_blank">📞 Call Us: +91 9622128720 6005331055 9797560287 9419175521</a>
-        
-        <a class="business-link" href="https://wa.me/919622128720" target="_blank">💬 Message on WhatsApp</a>
-        
-        <a class="business-link" href="https://maps.app.goo.gl/HHaK76FogyTMTPA36" target="_blank">🗺️ Find Our Store Location</a>
-        
-        <div class="divider"></div>
+  <!-- Big Enterprise Hero Section -->
+  <section class="hero">
+    <h1>Reliable Material Supply For Sustainable Structures</h1>
+    <p>Wholesale distribution of premium high-strength cement, structural steel reinforcing rods, and industrial architectural hardware components.</p>
+    <a href="tel:+91XXXXXXXXXX" class="btn-action">Request Wholesale Price List</a>
+  </section>
 
-        <p><strong>Deals in:</strong> Cement, TMT Steel Bars, Sand, Bajri, Excavator, Water Tanks Etc.</p>
-
-        <p class="footer">Open: 8:00 AM — 8:00 PM</p>
+  <!-- Corporate Trust Badges / Stats Block -->
+  <section class="stats-container">
+    <div class="stat-box">
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Years of Trading</div>
     </div>
+    <div class="stat-box">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Certified Brands Only</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number">250+</div>
+      <div class="stat-label">Major Projects Supplied</div>
+    </div>
+  </section>
+
+  <!-- Core Supplies Showcase -->
+  <section class="main-section">
+    <h2 class="section-headline">Our Primary Material Divisions</h2>
+    <p class="section-sub">We source directly from leading manufacturers to bring you unmatched structural integrity.</p>
+    
+    <div class="grid-layout">
+      <!-- Division 1 -->
+      <div class="product-card">
+        <img src="cement-item.jpg" alt="High Strength Grade Cement Packs">
+        <div class="card-content">
+          <h3>Structural Cement</h3>
+          <p>Sourcing setting-performance grades optimized specifically for concrete foundation pouring, casting blocks, and reinforcing brick elements.</p>
+        </div>
+      </div>
+
+      <!-- Division 2 -->
+      <div class="product-card">
+        <img src="hardware-item.jpg" alt="Industrial Hardware Fittings and Fasteners">
+        <div class="card-content">
+          <h3>Industrial Hardware</h3>
+          <p>A completely integrated catalog featuring robust anchor fasteners, precision manufacturing tools, safety equipment, and structural brackets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Footer -->
+  <footer>
+    <p>© 2026 Sharma Cement & Hardware Store. Built for heavy-duty business performance.</p>
+  </footer>
 
 </body>
 </html>
-          
-        
