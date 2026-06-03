@@ -10,7 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2 family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <style>
+ <!-- Font Awesome Vector Icons Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <style>
     /* Global Reset & Colors */
     :root {
       --primary-dark: #111625;   
@@ -53,7 +54,16 @@
     .top-bar a:hover {
       text-decoration: underline;
     }
-
+<!-- Header Navigation with Active Icons -->
+<header>
+  <div class="logo">SHARMA<span>.</span></div>
+  <nav>
+    <a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="#about"><i class="fa-solid fa-circle-info"></i> About Us</a>
+    <a href="#products"><i class="fa-solid fa-layer-group"></i> Categories</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Get in Touch</a>
+  </nav>
+</header>
     /* Main Header Navigation */
     header {
       background: var(--primary-dark);
