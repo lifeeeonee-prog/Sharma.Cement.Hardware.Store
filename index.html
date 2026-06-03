@@ -262,18 +262,19 @@
     }
 
     /* ==========================================================================
-       5. ABOUT SPLIT SECTION WITH PARALLEL IMAGES (Background Image: schs2.jpeg)
+       5. ABOUT SPLIT SECTION WITH PARALLEL IMAGES (CRITICAL IMAGE LOSS FIXED)
        ========================================================================== */
     .about-parallel-layout {
       display: flex;
-      align-items: center;
+      align-items: stretch; /* Forces text column and image boxes to stretch evenly */
       gap: 40px;
       padding: 20px 0;
+      width: 100%;
     }
 
     .about-text-content {
       flex: 1;
-      min-width: 300px;
+      min-width: 280px;
     }
 
     .about-text-content h3 {
@@ -292,18 +293,31 @@
     .about-images-parallel-row {
       flex: 1.2;
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Image grids sit perfectly parallel side-by-side */
+      grid-template-columns: 1fr 1fr; 
       gap: 15px;
+      min-width: 320px; /* Forces row container to maintain space instead of collapsing */
       width: 100%;
     }
 
     .parallel-img-box {
-      height: 320px;
+      width: 100%; /* Forces images to fill up grid columns */
+      height: 100%; 
+      min-height: 320px; /* Guarantees image boxes will stay tall and un-collapsed */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       border-radius: 6px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .img-schs1 {
+      background-image: url("schs1.jpeg");
+      background-image: url("schs1.JPEG");
+    }
+
+    .img-schs2 {
+      background-image: url("schs2.jpeg");
+      background-image: url("schs2.JPEG");
     }
 
     /* Fixed path variables with case redundancy mappings */
