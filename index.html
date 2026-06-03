@@ -6,6 +6,41 @@
   <title>Sharma Cement & Hardware Store</title>
 
   <style>
+   .btn-whatsapp-block {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: #FFFFFF !important;
+  text-decoration: none;
+  padding: 14px 32px;
+  font-weight: 700;
+  border-radius: 50px;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  animation: whatsappPulse 2s infinite;
+}
+
+.btn-whatsapp-block:hover {
+  background-color: #20ba5a;
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  text-decoration: none !important;
+}
+
+.btn-whatsapp-block svg {
+  width: 20px;
+  height: 20px;
+  fill: #FFFFFF;
+}
+
+@keyframes whatsappPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
     html {
       scroll-behavior: smooth;
     }
@@ -403,6 +438,12 @@
       <a href="https://api.whatsapp.com/send?Phone=9622128720" target="_blank" class="btn-whatsapp-nav">
         💬 WhatsApp
       </a>
+      <div style="text-align: center; margin: 20px 0;">
+  <a href="https://api.whatsapp.com/send?phone=919622128720" target="_blank" class="btn-whatsapp-block">
+    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.488 1.449 5.412 1.451 5.428 0 9.845-4.414 9.848-9.842.002-2.63-1.013-5.101-2.859-6.95S14.838 1.03 12.21 1.03C6.78 1.03 2.365 5.442 2.361 10.871c-.001 1.97.513 3.894 1.492 5.62l-.991 3.619 3.704-.972c1.554.848 3.305 1.294 5.081 1.296zM17.5 14.37c-.28-.14-1.65-.814-1.906-.907-.256-.094-.443-.14-.63.14-.188.28-.724.908-.887 1.093-.163.186-.326.21-.606.07-.28-.14-1.18-.435-2.25-1.387-.83-.74-1.39-1.652-1.55-1.93-.16-.28-.017-.431.122-.571.126-.126.28-.326.42-.49.14-.163.187-.28.28-.465.093-.186.047-.35-.024-.49-.07-.14-.63-1.517-.862-2.077-.227-.547-.457-.473-.63-.482-.163-.008-.35-.01-.536-.01-.186 0-.49.07-.746.35-.256.28-.98 1.012-.98 2.467 0 1.455 1.058 2.862 1.204 3.049.145.186 2.083 3.182 5.047 4.46.705.304 1.256.486 1.684.622.71.226 1.354.194 1.864.118.57-.085 1.651-.674 1.884-1.326.233-.652.233-1.21.163-1.325-.07-.116-.256-.21-.536-.35z"/></svg>
+    Chat Live on WhatsApp
+  </a>
+</div>
     </nav>
   </header>
 
@@ -509,14 +550,30 @@
         </a>
       </div>
     </div>
+<div class="map-container">
+  <iframe 
+    src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.73479406812!2d75.0407289!3d32.9477323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780482733150!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>.map-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid #E2E8F0;
+}
 
-    <div class="map-container">
-      <iframe 
-        src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.73479406812!2d75.0407289!3d32.9477323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780480994127!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+.map-container iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  display: block;
+}
+    
     </div>
   </section>
 
