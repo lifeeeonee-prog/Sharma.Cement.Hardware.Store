@@ -5,37 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sharma Cement & Hardware Store</title>
   
-  <!-- Premium Business Typography -->
+  <!-- Premium Modern Typography Link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2 family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
- <!-- Font Awesome Vector Icons Library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <style>
-    /* Global Reset & Colors */
+  <style>
     :root {
-       --primary-dark: #0F172A;   /* Deep Slate Blue */
-      --accent-gold: #FF5500;    /* Bright, High-Visibility Construction Orange */
-      --text-main: #1E293B;      /* Solid High-Contrast Charcoal Text */
-      --bg-light: #FFFFFF;       /* Pure Crisp White Background */   
+      --primary-dark: #0F172A;   
+      --accent-gold: #FF5500;    
+      --text-main: #1E293B;      
+      --bg-light: #FFFFFF;       
     }
 
     body {
-     font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       margin: 0;
       padding: 0;
       color: var(--text-main);
       background-color: var(--bg-light);
     }
 
+    /* Applying Ultra-Modern Impact Font to Headings */
     h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
       margin: 0;
     }
 
-    /* Top Bar Infostrip */
-    background-color: var(--accent-gold);
+    .top-bar {
+      background-color: var(--accent-gold);
       color: #FFFFFF;
       padding: 10px 5%;
       font-size: 13px;
@@ -43,29 +42,13 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      
     }
 
     .top-bar a {
-      color: var(--primary-dark);
+      color: #FFFFFF;
       text-decoration: none;
     }
-    
-    .top-bar a:hover {
-    color: #FFFFFF;
-      text-decoration: none;
-    }
-<!-- Header Navigation with Active Icons -->
-<header>
-  <div class="logo">SHARMA<span>.</span></div>
-  <nav>
-    <a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="#about"><i class="fa-solid fa-circle-info"></i> About Us</a>
-    <a href="#products"><i class="fa-solid fa-layer-group"></i> Categories</a>
-    <a href="#contact"><i class="fa-solid fa-envelope"></i> Get in Touch</a>
-  </nav>
-</header>
-    /* Main Header Navigation */
+
     header {
       background: var(--primary-dark);
       padding: 20px 5%;
@@ -102,17 +85,47 @@
       color: var(--accent-gold);
     }
 
-    /* Large Corporate Hero Banner */
+    /* Animated Alternating Hero Banner Base */
     .hero {
       position: relative;
-      background: linear-gradient(rgba(17, 22, 37, 0.85), rgba(17, 22, 37, 0.85)), url('hero-bg.jpg') no-repeat center center/cover;
       padding: 120px 5%;
       text-align: center;
       color: #FFFFFF;
+      overflow: hidden;
+      background-color: #1E293B;
+    }
+
+    /* Creating a background overlay layer that alternates images */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      /* Calls the alternating slider animation below (12 seconds loop) */
+      animation: alternateBanner 12s infinite ease-in-out;
+    }
+
+    /* Ensuring text stays sharply readable on top of the moving background */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* The Alternating Animation Logic */
+    @keyframes alternateBanner {
+      0%, 45% {
+        background-image: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)), url('hero-bg.jpg');
+      }
+      55%, 100% {
+        background-image: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)), url('cement-item.jpg');
+      }
     }
 
     .hero h1 {
-      font-size: 46px;
+      font-size: 48px;
       margin-bottom: 20px;
       letter-spacing: -1px;
       line-height: 1.2;
@@ -120,7 +133,7 @@
 
     .hero p {
       font-size: 19px;
-      color: #CBD5E0;
+      color: #E2E8F0;
       max-width: 750px;
       margin: 0 auto 35px auto;
       line-height: 1.6;
@@ -128,7 +141,7 @@
 
     .btn-action {
       background: var(--accent-gold);
-      color: var(--primary-dark);
+      color: #FFFFFF;
       padding: 15px 35px;
       text-decoration: none;
       font-weight: 700;
@@ -142,10 +155,10 @@
 
     .btn-action:hover {
       background: #FFFFFF;
+      color: var(--primary-dark);
       transform: translateY(-2px);
     }
 
-    /* Trust Statistics Cards Container */
     .stats-container {
       background: #FFFFFF;
       padding: 35px;
@@ -153,7 +166,7 @@
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
       max-width: 1100px;
       margin: -40px auto 0 auto;
       position: relative;
@@ -177,13 +190,12 @@
 
     .stat-label {
       font-size: 13px;
-      color: #718096;
+      color: #64748B;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 600;
     }
 
-    /* Standard Core Section Styling */
     .main-section {
       max-width: 1200px;
       margin: 90px auto;
@@ -209,7 +221,7 @@
     }
 
     .section-sub {
-      color: #718096;
+      color: #64748B;
       font-size: 16px;
       margin-bottom: 60px;
     }
@@ -226,7 +238,7 @@
       border-radius: 6px;
       overflow: hidden;
       width: 360px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
       border: 1px solid #E2E8F0;
       text-align: left;
       transition: all 0.3s ease;
@@ -234,13 +246,14 @@
 
     .product-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
 
     .product-card img {
       width: 100%;
       height: 230px;
       object-fit: cover;
+      background-color: #E2E8F0;
     }
 
     .card-content {
@@ -254,13 +267,12 @@
     }
 
     .card-content p {
-      color: #4A5568;
+      color: #475569;
       font-size: 14px;
       line-height: 1.6;
       margin: 0;
     }
 
-    /* Construction Project Gallery Section */
     .gallery-grid {
       display: flex;
       gap: 20px;
@@ -275,13 +287,14 @@
       height: 200px;
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      background-color: #E2E8F0;
       transition: transform 0.4s ease;
     }
 
@@ -294,7 +307,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
       color: #FFFFFF;
       padding: 15px 10px;
       font-size: 14px;
@@ -302,10 +315,9 @@
       text-align: center;
     }
 
-    /* Corporate Footer */
     footer {
       background: var(--primary-dark);
-      color: #A0AEC0;
+      color: #94A3B8;
       padding: 50px 5%;
       text-align: center;
       font-size: 14px;
@@ -315,19 +327,17 @@
 </head>
 <body>
 
-  <!-- Top Info Strip (Now with clickable direct actions) -->
   <div class="top-bar">
-    <div>Location: Near JK Bank Kambal Danga Udhampur </div>
+    <div>📍 Serving Premium Infrastructure Needs</div>
     <div>
-      📞 Call: <a href="PHONE":+919622128720,9797560287,9419175521">+919622128720,9797560287,9419175521</a> 
+      📞 Call: <a href="tel:+919876543210">+91 98765 43210</a> 
       | 
-      ✉️ Email: <a href="EMAIL: sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a>
+      ✉️ Email: <a href="mailto:sharmacementkd@gmail.com">sharmacementkd@gmail.com</a>
     </div>
   </div>
 
-  <!-- Header Navigation -->
   <header>
-    <div class="logo">SHARMA CEMENT & HARDWARE STORE<span></span></div>
+    <div class="logo">SHARMA<span>.</span></div>
     <nav>
       <a href="#" class="active">Home</a>
       <a href="#">About Details</a>
@@ -336,73 +346,66 @@
     </nav>
   </header>
 
-  <!-- Big Enterprise Hero Section -->
+  <!-- Hero Section wrapped in a Content Layer to allow the alternating background effect -->
   <section class="hero">
-    <h1>Reliable Material Supply For Sustainable Structures</h1>
-    <p>Wholesale distribution of premium high-strength cement, TMT steel, excavator, sand/stone/bajri & water tank/mixer machine etc.</p>
-    <!-- Mobile call integration button -->
-    <a href="tel:+919622128720" class="btn-action">📞 Call For Live Rates</a>
+    <div class="hero-content">
+      <h1>Reliable Material Supply For Sustainable Structures</h1>
+      <p>Wholesale distribution of premium high-strength cement, structural steel reinforcing rods, and industrial architectural hardware components.</p>
+      <a href="tel:+919876543210" class="btn-action">📞 Call For Live Rates</a>
+    </div>
   </section>
 
-  <!-- Corporate Trust Badges / Stats Block -->
   <section class="stats-container">
     <div class="stat-box">
-      <div class="stat-number">30+</div>
-      <div class="stat-label">Years of Business</div>
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Years of Trading</div>
     </div>
     <div class="stat-box">
       <div class="stat-number">100%</div>
       <div class="stat-label">Certified Brands Only</div>
     </div>
     <div class="stat-box">
-      <div class="stat-number">500+</div>
+      <div class="stat-number">250+</div>
       <div class="stat-label">Major Projects Supplied</div>
     </div>
   </section>
 
-  <!-- Core Supplies Showcase -->
   <section class="main-section">
     <h2 class="section-headline">Our Primary Material Divisions</h2>
     <p class="section-sub">We source directly from leading manufacturers to bring you unmatched structural integrity.</p>
     
     <div class="grid-layout">
-      <!-- Division 1 -->
       <div class="product-card">
-        <img src="cement-item.jpg" alt=>
+        <img src="cement-item.jpg" alt="High Strength Grade Cement Packs">
         <div class="card-content">
           <h3>Structural Cement</h3>
-          <p>High Strength Grade Cement Packs.</p>
+          <p>Sourcing setting-performance grades optimized specifically for concrete foundation pouring, casting blocks, and reinforcing brick elements.</p>
         </div>
       </div>
 
-      <!-- Division 2 -->
       <div class="product-card">
-        <img src="hardware-item.jpg" alt >
+        <img src="hardware-item.jpg" alt="Industrial Hardware Fittings and Fasteners">
         <div class="card-content">
-          <h3>Construction materials</h3>
-          <p>A Sand, Stone, Bajri, JCB excavator, TMT steel bar etc .</p>
+          <h3>Industrial Hardware</h3>
+          <p>A completely integrated catalog featuring robust anchor fasteners, precision manufacturing tools, safety equipment, and structural brackets.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEW FEATURE: Construction Projects Gallery -->
-  <section class="main-section" style="background-color: #FFFFFF; max-width: 100%; padding: 60px 5%; margin: 0;">
+  <section class="main-section" style="background-color: #FFFFFF; max-width: 100%; padding: 60px 5%; margin: 0; border-top: 1px solid #E2E8F0;">
     <h2 class="section-headline">Projects Built With Our Materials</h2>
     <p class="section-sub">Our raw supplies lay the foundation for robust residential and commercial landmarks.</p>
     
     <div class="gallery-grid">
-      <!-- Project 1 -->
       <div class="gallery-item">
         <img src="project1.jpg" alt="Residential Structure Foundation">
         <div class="gallery-caption">Residential Infrastructure</div>
       </div>
-      <!-- Project 2 -->
       <div class="gallery-item">
         <img src="project2.jpg" alt="Commercial Column Casting">
         <div class="gallery-caption">Commercial Pillars</div>
       </div>
-      <!-- Project 3 -->
       <div class="gallery-item">
         <img src="project3.jpg" alt="Heavy Steel Roof Installation">
         <div class="gallery-caption">Industrial Roofing</div>
@@ -410,7 +413,6 @@
     </div>
   </section>
 
-  <!-- Corporate Footer -->
   <footer>
     <p>© 2026 Sharma Cement & Hardware Store. Built for heavy-duty business performance.</p>
   </footer>
