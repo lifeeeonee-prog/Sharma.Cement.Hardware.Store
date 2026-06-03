@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sharma Cement & Hardware Store</title>
-  
-  <!-- Premium Modern Typography Link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href= rel="stylesheet">
 
   <style>
-   scroll-behavior: smooth;
+    /* 1. FIX: MANDATORY SMOOTH UP/DOWN NAVIGATION MOVEMENT */
+    html {
+      scroll-behavior: smooth;
+    }
+
     :root {
       --primary-dark: #0F172A;   
       --accent-gold: #FF5500;    
@@ -19,26 +18,26 @@
       --bg-light: #FFFFFF;       
     }
 
+    /* Clean Calibri/Standard Typography */
     body {
-     font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: var(--text-main);
-  background-color: var(--bg-light);
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-main);
+      background-color: var(--bg-light);
     }
 
- /* Make your headings use the same clean Calibri look */
-h1, h2, h3 {
-  font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
-  font-weight: 700;
-  margin: 0;
+    h1, h2, h3 {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-weight: 700;
+      margin: 0;
     }
 
     .top-bar {
       background-color: var(--accent-gold);
       color: #FFFFFF;
       padding: 10px 5%;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       display: flex;
       justify-content: space-between;
@@ -62,8 +61,9 @@ h1, h2, h3 {
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
+    /* 2. FIX: CORRECTED HEADER LOGO FONT COLOUR (VIBRANT POPPING WHITE) */
     .logo {
-      color: #FFFFFF;
+      color: #FFFFFF !important;
       font-size: 24px;
       font-weight: 800;
       letter-spacing: -0.5px;
@@ -73,20 +73,22 @@ h1, h2, h3 {
       color: var(--accent-gold);
     }
 
+    /* 2. FIX: CORRECTED HEADER NAVIGATION FONT COLOURS (HIGH-CONTRAST LIGHT SLATE) */
     nav a {
-      color: #E2E8F0;
+      color: #F1F5F9 !important; 
       text-decoration: none;
       margin-left: 25px;
       font-weight: 600;
-      font-size: 15px;
-      transition: color 0.2s;
+      font-size: 16px;
+      transition: color 0.2s ease-in-out;
     }
 
-    nav a:hover, nav a.active {
-      color: var(--accent-gold);
+    /* 2. FIX: HOVER ACTION COLOUR FOR NAVIGATION LINKS */
+    nav a:hover {
+      color: var(--accent-gold) !important;
     }
 
-    /* Animated Alternating Hero Banner Base */
+    /* 3. FIX: CORRECT IMAGE UPLOAD PATHWAYS WITH OVERLAYS */
     .hero {
       position: relative;
       padding: 120px 5%;
@@ -96,7 +98,6 @@ h1, h2, h3 {
       background-color: #1E293B;
     }
 
-    /* Creating a background overlay layer that alternates images */
     .hero::before {
       content: "";
       position: absolute;
@@ -105,17 +106,14 @@ h1, h2, h3 {
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      /* Calls the alternating slider animation below (12 seconds loop) */
       animation: alternateBanner 12s infinite ease-in-out;
     }
 
-    /* Ensuring text stays sharply readable on top of the moving background */
     .hero-content {
       position: relative;
       z-index: 2;
     }
 
-    /* The Alternating Animation Logic */
     @keyframes alternateBanner {
       0%, 45% {
         background-image: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)), url('hero-bg.jpg');
@@ -126,9 +124,8 @@ h1, h2, h3 {
     }
 
     .hero h1 {
-      font-size: 48px;
+      font-size: 46px;
       margin-bottom: 20px;
-      letter-spacing: -1px;
       line-height: 1.2;
     }
 
@@ -199,7 +196,7 @@ h1, h2, h3 {
 
     .main-section {
       max-width: 1200px;
-      margin: 90px auto;
+      margin: 80px auto;
       padding: 0 20px;
       text-align: center;
     }
@@ -224,7 +221,15 @@ h1, h2, h3 {
     .section-sub {
       color: #64748B;
       font-size: 16px;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
+    }
+
+    .about-text {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #475569;
     }
 
     .grid-layout {
@@ -254,7 +259,6 @@ h1, h2, h3 {
       width: 100%;
       height: 230px;
       object-fit: cover;
-      background-color: #E2E8F0;
     }
 
     .card-content {
@@ -274,52 +278,46 @@ h1, h2, h3 {
       margin: 0;
     }
 
-    .gallery-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 40px;
+    .contact-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
     }
 
-    .gallery-item {
-      position: relative;
-      width: 270px;
-      height: 200px;
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    .contact-item {
+      margin-bottom: 20px;
+      font-size: 16px;
     }
 
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      background-color: #E2E8F0;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.08);
-    }
-
-    .gallery-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
-      color: #FFFFFF;
-      padding: 15px 10px;
+    .contact-item strong {
+      color: var(--primary-dark);
+      display: block;
       font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .contact-item a {
+      color: var(--accent-gold);
+      text-decoration: none;
       font-weight: 600;
-      text-align: center;
+      font-size: 18px;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
     }
 
     footer {
       background: var(--primary-dark);
       color: #94A3B8;
-      padding: 50px 5%;
+      padding: 40px 5%;
       text-align: center;
       font-size: 14px;
       border-top: 4px solid var(--accent-gold);
@@ -328,35 +326,38 @@ h1, h2, h3 {
 </head>
 <body>
 
+  <!-- Top Contact Strip -->
   <div class="top-bar">
-    <div> Location: Near JK Bank Kambal Danga Udhampur</div>
+    <div>Location: Near JK Bank Kambal Danga Udhampur</div>
     <div>
-      📞 Call: <a href="Phone:9622128720,9797560287,9419175521">9622128720,9797560287,9419175521</a> 
+      📞 Call: <a href="9622128720,9797560287,9419175521">9622128720,9797560287,9419175521</a> 
       | 
-      ✉️ Email: <a href="Email:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a>
+      ✉️ Email: <a href=" Email: sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a>
     </div>
   </div>
 
+  <!-- Header Navigation Area -->
   <header>
-    <div class="logo">SHARMA CEMENT & HARDWARE STORE<span></span></div>
+    <div class="logo">SHARMA CEMENT & HARDWARE STORE 
+<span></span></div>
     <nav>
-     <a href="#">Home</a>
-  <a href="#about">About Details</a>
-  <a href="#products">Material Categories</a>
-  <a href="#contact">Get in Touch</a>
+      <a href="#">Home</a>
+      <a href="#about">About Details</a>
+      <a href="#categories">Material Categories</a>
+      <a href="#contact">Get in Touch</a>
     </nav>
   </header>
 
-  <!-- Hero Section wrapped in a Content Layer to allow the alternating background effect -->
+  <!-- Hero Slider Area -->
   <section class="hero">
     <div class="hero-content">
       <h1>Reliable Material Supply For Sustainable Structures</h1>
       <p>Wholesale distribution of premium high-strength cement, sand/stone/bajri, TMT bar,excavator, water tank/mixer machine etc.</p>
-      <a href="tel:+919876543210" class="btn-action">📞 Call For Live Rates</a>
+      <a href="#contact" class="btn-action">Get Free Quote</a>
     </div>
   </section>
-<section id="about" class="main-section">
-  <section id="contact" class="main-section">
+
+  <!-- Trust Metrics -->
   <section class="stats-container">
     <div class="stat-box">
       <div class="stat-number">30+</div>
@@ -372,7 +373,17 @@ h1, h2, h3 {
     </div>
   </section>
 
-  <section class="main-section">
+  <!-- 1. ABOUT TARGET BLOCK -->
+  <section id="about" class="main-section">
+    <h2 class="section-headline">About Our Store</h2>
+    <p class="section-sub">A legacy of trust and premium structural materials.</p>
+    <div class="about-text">
+      Welcome to Sharma Cement & Hardware Store. For over 30+ years, we have been the leading supplier of top-tier construction materials for builders, contractors, and home developers. We specialize in distributing premium-grade structural cement, heavy-duty iron TMT bars, and an exhaustive inventory of wholesale industrial hardware tools. Built on the values of absolute reliability and genuine pricing, we ensure your building stands strong for generations.
+    </div>
+  </section>
+
+  <!-- 2. CATEGORIES TARGET BLOCK -->
+  <section id="categories" class="main-section" style="border-top: 1px solid #E2E8F0; padding-top: 60px;">
     <h2 class="section-headline">Our Primary Material Divisions</h2>
     <p class="section-sub">We source directly from leading manufacturers to bring you unmatched structural integrity.</p>
     
@@ -380,7 +391,7 @@ h1, h2, h3 {
       <div class="product-card">
         <img src="cement-item.jpg" alt=>
         <div class="card-content">
-          <h3>Structural Cement</h3>
+          <h3>Cement</h3>
           <p>High Strength Grade Cement Packs.</p>
         </div>
       </div>
@@ -389,28 +400,31 @@ h1, h2, h3 {
         <img src="hardware-item.jpg" alt=>
         <div class="card-content">
           <h3>Other Construction Materials</h3>
-          <p>Sand/Stone/Bajri, TMT bars, JCB excavator,Mixer Machines, Water Tanks etc.</p>
+          <p>Sand/Stone/Bajri, TMT bars, JCB excavator,Mixer Machines, Water Tanks etc..</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="main-section" style="background-color: #FFFFFF; max-width: 100%; padding: 60px 5%; margin: 0; border-top: 1px solid #E2E8F0;">
-    <h2 class="section-headline">Projects Built With Our Materials</h2>
-    <p class="section-sub">Our raw supplies lay the foundation for robust residential and commercial landmarks.</p>
+  <!-- 3. CONTACT TARGET BLOCK -->
+  <section id="contact" class="main-section" style="border-top: 1px solid #E2E8F0; padding-top: 60px;">
+    <h2 class="section-headline">Get In Touch</h2>
+    <p class="section-sub">Contact our sales desk directly for wholesale rates and site delivery options.</p>
     
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="project1.jpg" alt="Residential Structure Foundation">
-        <div class="gallery-caption">Residential Infrastructure</div>
+    <div class="contact-box">
+      <div class="contact-item">
+        <strong>Main Store Phone Number</strong>
+        <a href="Phone:9622128720">9622128720</a>
       </div>
-      <div class="gallery-item">
-        <img src="project2.jpg" alt="Commercial Column Casting">
-        <div class="gallery-caption">Commercial Pillars</div>
+      
+      <div class="contact-item">
+        <strong>Official Gmail Address</strong>
+        <a href="Email:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a>
       </div>
-      <div class="gallery-item">
-        <img src="project3.jpg" alt="Heavy Steel Roof Installation">
-        <div class="gallery-caption">Industrial Roofing</div>
+
+      <div class="contact-item" style="margin-bottom: 0;">
+        <strong>Our Business Hours</strong>
+        <span style="font-size: 16px; color: #475569; font-weight: 500;">Monday - Sunday: 8:00 AM - 7:00 PM </span>
       </div>
     </div>
   </section>
