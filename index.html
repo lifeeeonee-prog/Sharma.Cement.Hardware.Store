@@ -6,97 +6,25 @@
   <title>Sharma Cement & Hardware Store</title>
   
   <style>
-   /* ==========================================================================
-   ABOUT US PARALLEL IMAGES GRID SYSTEM
-   ========================================================================== */
-.about-parallel-layout {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 40px 0;
-}
-
-.about-text-content {
-  flex: 1;
-  min-width: 300px;
-}
-
-.about-text-content h3 {
-  color: #0b2545;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: 800;
-}
-
-.about-text-content p {
-  font-size: 1.05rem;
-  color: #4a5568;
-  line-height: 1.7;
-}
-
-.about-images-parallel-row {
-  flex: 1.2;
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Forces images to stand perfectly parallel */
-  gap: 15px;
-  width: 100%;
-}
-
-.parallel-img-box {
-  height: 320px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* Image assignments matching both casing styles for production server fallbacks */
-.img-schs1 {
-  background-image: url("schs1.jpeg");
-  background-image: url("schs1.JPEG");
-}
-
-.img-schs2 {
-  background-image: url("schs2.jpeg");
-  background-image: url("schs2.JPEG");
-}
-
-/* Anti-Congestion Mobile Adjustment */
-@media (max-width: 768px) {
-  .about-parallel-layout {
-    flex-direction: column; /* Stacks text above images on mobile devices */
-    gap: 25px;
-  }
-  
-  .about-images-parallel-row {
-    /* Keeps images parallel on tablets but lets them look balanced on smaller devices */
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px;
-  }
-
-  .parallel-img-box {
-    height: 200px; /* Lowers image frames on smartphones so screens don't get congested */
-  }
- /* ==========================================================================
-       1. GLOBAL RESET & ANTI-CONGESTION SYSTEM
+    /* ==========================================================================
+       1. GLOBAL RESET & DEFENSIVE ANTI-CONGESTION SYSTEM
        ========================================================================== */
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box; /* Forces layout boxes to calculate padding internally */
+      box-sizing: border-box; 
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     html, body {
       width: 100%;
-      overflow-x: hidden; /* Strict defense: blocks layout boundaries from breaking horizontally on mobile screens */
+      overflow-x: hidden; /* Strict defense: bars horizontal side-scrolling entirely on mobile */
       background-color: #f4f6f9;
       color: #2c3e50;
       scroll-behavior: smooth;
     }
 
-    /* Top Information Contact Strip Area */
+    /* Top Premium Info Utility Strip Line */
     .utility-bar {
       background-color: #05162e;
       color: #dae4ee;
@@ -177,96 +105,75 @@
       font-size: 0.85rem;
       text-decoration: none;
       box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
-      transition: opacity 0.2s ease;
-    }
-
-    .whatsapp-btn:hover {
-      opacity: 0.95;
     }
 
     /* ==========================================================================
-      /* ==========================================================================
-   HERO PANEL SHOWCASE (Background: cement4-item.jpg)
-   ========================================================================== */
-.hero-showcase {
-  position: relative;
-  /* Uses your sand/bajri/stone asset (cement4-item.jpg) with a dark overlay for maximum text readability */
-  background-image: linear-gradient(rgba(7, 24, 43, 0.85), rgba(7, 24, 43, 0.85)), url("cement4-item.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Parallax tracking effect for premium look */
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #ffffff;
-  padding: 80px 20px;
-}
+       3. HERO SHOWCASE PANEL (Background Image: schs1.jpeg)
+       ========================================================================== */
+    .hero-showcase {
+      position: relative;
+      /* Case-sensitivity fallbacks implemented specifically for GitHub Pages hosting environment */
+      background-image: linear-gradient(rgba(7, 24, 43, 0.82), rgba(7, 24, 43, 0.82)), url("schs1.jpeg");
+      background-image: linear-gradient(rgba(7, 24, 43, 0.82), rgba(7, 24, 43, 0.82)), url("schs1.JPEG");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      padding: 80px 20px;
+    }
 
-.hero-inner-content {
-  max-width: 850px;
-  width: 100%;
-}
+    .hero-inner-content {
+      max-width: 850px;
+      width: 100%;
+    }
 
-.hero-showcase h1 {
-  font-size: 3.2rem;
-  margin-bottom: 20px;
-  font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: -0.5px;
-  text-transform: uppercase;
-}
+    .hero-showcase h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
 
-.hero-showcase p {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-  color: #dae3e5;
-  line-height: 1.6;
-}
+    .hero-showcase p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      color: #dae3e5;
+      line-height: 1.6;
+    }
 
-.explore-btn {
-  display: inline-block;
-  background-color: #ffcc00;
-  color: #0b2545;
-  padding: 14px 35px;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    .explore-btn {
+      display: inline-block;
+      background-color: #ffcc00;
+      color: #0b2545;
+      padding: 14px 35px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background-color 0.3s ease;
+    }
 
-.explore-btn:hover {
-  background-color: #e6b800;
-  transform: translateY(-2px);
-}
-
-/* Mobile tuning to keep the background from scaling awkwardly */
-@media (max-width: 768px) {
-  .hero-showcase {
-    background-attachment: scroll; /* Disables parallax on mobile to preserve loading speeds */
-    min-height: 60vh;
-    padding: 60px 15px;
-  }
-  .hero-showcase h1 {
-    font-size: 2.2rem;
-  }
-  .hero-showcase p {
-    font-size: 1.05rem;
-  }
+    .explore-btn:hover {
+      background-color: #e6b800;
+    }
 
     /* ==========================================================================
-       4. MATERIAL SECTIONS (Background: cement2-item.jpg)
+       4. PRIMARY MATERIAL DIVISIONS (Background Image: cement2-item.jpg)
        ========================================================================== */
     .materials-parallax-section {
       position: relative;
-      background-image: linear-gradient(rgba(244, 246, 249, 0.92), rgba(244, 246, 249, 0.92)), url("cement2-item.jpg");
+      background-image: linear-gradient(rgba(244, 246, 249, 0.94), rgba(244, 246, 249, 0.94)), url("cement2-item.jpg");
+      background-image: linear-gradient(rgba(244, 246, 249, 0.94), rgba(244, 246, 249, 0.94)), url("cement2-item.JPG");
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
       width: 100%;
     }
 
@@ -295,7 +202,7 @@
 
     .divisions-fluid-grid {
       display: grid;
-      /* Drops mobile columns layout safely to 280px to block vertical overlap text crowding */
+      /* Drops mobile columns minimum threshold safely to 280px to block layout text crushing */
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
@@ -314,7 +221,7 @@
       transform: translateY(-5px);
     }
 
-    /* Dynamic Multi-Asset Graphics Carousel Blocks */
+    /* Grid multi-asset graphical displays inside product cards */
     .card-graphic-display {
       height: 220px;
       width: 100%;
@@ -323,7 +230,6 @@
       overflow: hidden;
     }
 
-    /* Slideshow frame layers inside cards */
     .slide-img {
       flex: 1;
       height: 100%;
@@ -333,7 +239,7 @@
     }
 
     .slide-img:hover {
-      transform: scale(1.06);
+      transform: scale(1.05);
     }
 
     .card-body-content {
@@ -356,48 +262,59 @@
     }
 
     /* ==========================================================================
-       5. ABOUT SPLIT SECTION (Background Box: schs2.jpeg)
+       5. ABOUT SPLIT SECTION WITH PARALLEL IMAGES (Background Image: schs2.jpeg)
        ========================================================================== */
-    .about-split-row {
+    .about-parallel-layout {
       display: flex;
-      align-items: stretch;
-      gap: 50px;
-      background-color: #ffffff;
-      padding: 50px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      align-items: center;
+      gap: 40px;
+      padding: 20px 0;
     }
 
-    .about-left-text {
+    .about-text-content {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      min-width: 300px;
     }
 
-    .about-left-text h3 {
+    .about-text-content h3 {
       color: #0b2545;
       font-size: 1.8rem;
       margin-bottom: 20px;
       font-weight: 800;
     }
 
-    .about-left-text p {
+    .about-text-content p {
       font-size: 1.05rem;
       color: #4a5568;
       line-height: 1.7;
     }
 
-    .about-right-image {
-      flex: 1;
+    .about-images-parallel-row {
+      flex: 1.2;
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Image grids sit perfectly parallel side-by-side */
+      gap: 15px;
       width: 100%;
-      min-height: 350px;
-      background-image: url("schs2.jpeg");
-      background-image: url("schs2.JPEG");
+    }
+
+    .parallel-img-box {
+      height: 320px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Fixed path variables with case redundancy mappings */
+    .img-schs1 {
+      background-image: url("schs1.jpeg");
+      background-image: url("schs1.JPEG");
+    }
+
+    .img-schs2 {
+      background-image: url("schs2.jpeg");
+      background-image: url("schs2.JPEG");
     }
 
     /* ==========================================================================
@@ -413,12 +330,12 @@
     }
 
     .map-fluid-shell iframe {
-      width: 100% !important;
+      width: 100% !important; /* Overrides iframe flat parameters to wrap completely fluid inside container shell */
       display: block;
     }
 
     /* ==========================================================================
-       7. GLOBAL SYSTEM FOOTER
+       7. GLOBAL FOOTER SYSTEM
        ========================================================================== */
     footer {
       background-color: #05162e;
@@ -435,7 +352,7 @@
     }
 
     /* ==========================================================================
-       8. RESPONSIVE CONTROLS (Locks stacking rules to clear mobile congestion)
+       8. RESPONSIVE CONTROLS (Anti-Congestion Stack Safeguards)
        ========================================================================== */
     @media (max-width: 768px) {
       .utility-bar {
@@ -474,21 +391,25 @@
       }
 
       .divisions-fluid-grid {
-        grid-template-columns: 1fr; /* Rigid stack alignment removes squeeze limitations entirely */
+        grid-template-columns: 1fr; /* Enforces absolute rigid single-column structure on smart devices */
       }
 
       .card-graphic-display {
-        height: 190px; /* Scales card viewports gracefully down on smaller smartphone screens */
+        height: 190px;
       }
 
-      .about-split-row {
-        flex-direction: column;
-        padding: 25px 20px;
+      .about-parallel-layout {
+        flex-direction: column; /* Safeguard: shifts side images vertically below textual blocks on mobile */
         gap: 25px;
       }
 
-      .about-right-image {
-        min-height: 250px;
+      .about-images-parallel-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .parallel-img-box {
+        height: 180px; /* Balances aspect boundaries gracefully to stop window scrolling compression */
       }
 
       .map-fluid-shell iframe {
@@ -499,14 +420,12 @@
 </head>
 <body>
 
- <!-- Top Informational Contact Utility Bar -->
-<div class="utility-bar">
-  <span>📍 Location: Near JK Bank Kambal Danga Udhampur (J&K)</span>
-  <span>✉️ Email: <EMAIL: sharma.cement.hardware@gmail.com">sharma.cement.hardware.@gmail.com</a></span>
-  <span>📞 Call: <a href="tel:9622128720">9622128720</a> | <a href="tel:9797560287">9797560287</a> | <a href="tel:9419175521">9419175521</a></span>
-</div>
+  <div class="utility-bar">
+    <span>📍 Location: Near JK Bank Kambal Danga Udhampur (J&K)</span>
+    <span>✉️ Email: <a href="EMAIL: sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></span>
+    <span>📞 Call: <a href="tel:9622128720">9622128720</a> | <a href="tel:9797560287">9797560287</a> | <a href="tel:9419175521">9419175521</a></span>
+  </div>
 
-  <!-- Main Sticky Header Navigation Frame -->
   <header>
     <div class="nav-container">
       <div class="brand-logo">SHARMA CEMENT & HARDWARE STORE</span></div>
@@ -519,7 +438,6 @@
     </div>
   </header>
 
-  <!-- Hero Landing Showcase Section (Background Image Asset: schs1.jpeg) -->
   <section class="hero-showcase" id="home">
     <div class="hero-inner-content">
       <h1>Reliable Material Supply For Sustainable Structures</h1>
@@ -528,7 +446,6 @@
     </div>
   </section>
 
-  <!-- Materials Container Section (Background Image Asset: cement2-item.jpg) -->
   <section class="materials-parallax-section" id="materials">
     <div class="section-wrapper">
       <h2 class="section-headline">Our Primary Material Divisions</h2>
@@ -536,7 +453,6 @@
       
       <div class="divisions-fluid-grid">
         
-        <!-- Division Card 1: Premium Cement Stock (Assigned Assets: cement-item.jpg.jpeg, cement3-item.jpg, cement4-item.jpg) -->
         <div class="division-item-card">
           <div class="card-graphic-display">
             <div class="slide-img" style="background-image: url('cement-item.jpg.jpeg');"></div>
@@ -549,19 +465,17 @@
           </div>
         </div>
 
-        <!-- Division Card 2: Mixer & Water Tank Services (Assigned Assets: schs3.jpeg, schs4.jpeg) -->
         <div class="division-item-card">
           <div class="card-graphic-display">
             <div class="slide-img" style="background-image: url('schs3.jpeg');"></div>
             <div class="slide-img" style="background-image: url('schs4.jpeg');"></div>
           </div>
           <div class="card-body-content">
-            <h3>Reliable Mixer &amp; Water Tank Services</h3>
+            <h3>Reliable Mixer & Water Tank Services</h3>
             <p>Complete supply pathways for heavy industrial structural projects matching your framework criteria safely.</p>
           </div>
         </div>
 
-        <!-- Division Card 3: Machinery Excavation Logistics (Assigned Asset: schs5.jpeg) -->
         <div class="division-item-card">
           <div class="card-graphic-display">
             <div class="slide-img" style="background-image: url('schs5.jpeg'); width: 100%; flex: none;"></div>
@@ -576,25 +490,24 @@
     </div>
   </section>
 
-  <!-- About History Row Section Component (Background Image Asset: schs2.jpeg) -->
-<section class="section-wrapper" id="about" style="background-color: #ffffff; max-width: 100%;">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-    
-    <div class="about-parallel-layout">
-      <div class="about-text-content">
-        <h3>A Legacy of Trust For Over 30 Years</h3>
-        <p>Welcome to Sharma Cement & Hardware Store. For over three decades, we have served as a foundational partner for local builders, engineering crews, and commercial logistics developers. We specialize in distributing top-tier structural materials, featuring authorized high-durability cement lines, premium structural equipment provisions, and specialized logistics services to keep your framework resilient.</p>
-      </div>
-      
-      <div class="about-images-parallel-row">
-        <div class="parallel-img-box img-schs1"></div>
-        <div class="parallel-img-box img-schs2"></div>
+  <section class="section-wrapper" id="about" style="background-color: #ffffff; max-width: 100%;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <div class="about-parallel-layout">
+        
+        <div class="about-text-content">
+          <h3>A Legacy of Trust For Over 30 Years</h3>
+          <p>Welcome to Sharma Cement & Hardware Store. For over three decades, we have served as a foundational partner for local builders, engineering crews, and commercial logistics developers. We specialize in distributing top-tier structural materials, featuring authorized high-durability cement lines, premium structural equipment provisions, and specialized logistics services to keep your framework resilient.</p>
+        </div>
+        
+        <div class="about-images-parallel-row">
+          <div class="parallel-img-box img-schs1"></div>
+          <div class="parallel-img-box img-schs2"></div>
+        </div>
+        
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
-  <!-- Official Google Maps Location Component -->
   <section class="section-wrapper" id="location">
     <h2 class="section-headline">Visit Our Sales Yard</h2>
     <p class="section-subheadline">Find us near JK Bank, Kambal Danga, Udhampur. Come by for wholesale rates and heavy material loading.</p>
@@ -612,7 +525,6 @@
     </div>
   </section>
 
-  <!-- Systems Global Footer Footer Element -->
   <footer>
     <p>© 2026 <span>Sharma Cement & Hardware Store</span>. Built for heavy-duty business performance.</p>
   </footer>
