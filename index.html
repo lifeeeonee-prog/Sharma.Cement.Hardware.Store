@@ -12,24 +12,24 @@
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box; /* Strict defense: blocks layout elements from bursting out of screen boundaries */
+      box-sizing: border-box; /* Forces layout boxes to calculate padding internally */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     html, body {
       width: 100%;
-      overflow-x: hidden; /* Total protection: guarantees zero horizontal side-scrolling on mobile phones */
-      background-color: #f5f7fa;
-      color: #2b3a4a;
+      overflow-x: hidden; /* Strict defense: blocks layout boundaries from breaking horizontally on mobile screens */
+      background-color: #f4f6f9;
+      color: #2c3e50;
       scroll-behavior: smooth;
     }
 
-    /* Top Information Contact strip */
-    .utility-contact-bar {
+    /* Top Information Contact Strip Area */
+    .utility-bar {
       background-color: #05162e;
       color: #dae4ee;
       font-size: 0.85rem;
-      padding: 10px 5%;
+      padding: 12px 5%;
       text-align: center;
       display: flex;
       justify-content: center;
@@ -38,14 +38,14 @@
       border-bottom: 1px solid #102e54;
     }
 
-    .utility-contact-bar a {
+    .utility-bar a {
       color: #ffcc00;
       text-decoration: none;
       font-weight: 600;
     }
 
     /* ==========================================================================
-       2. NAVIGATION HEADER (Fluid Wrap Architecture)
+       2. STICKY NAVIGATION HEADER
        ========================================================================== */
     header {
       background-color: #0b2545;
@@ -105,20 +105,19 @@
       font-size: 0.85rem;
       text-decoration: none;
       box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      transition: opacity 0.2s ease;
     }
 
     .whatsapp-btn:hover {
       opacity: 0.95;
-      transform: translateY(-1px);
     }
 
     /* ==========================================================================
-       3. HERO PANEL SECTION (Uses store image background: schs1.jpeg)
+       3. HERO SHOWCASE (Background: schs1.jpeg)
        ========================================================================== */
     .hero-showcase {
       position: relative;
-      /* Dual declarations handle case sensitivity (lowercase/uppercase extensions) on GitHub production roots */
+      /* Dual background strings to cleanly catch case-sensitive image extensions on servers */
       background-image: linear-gradient(rgba(11, 37, 69, 0.82), rgba(11, 37, 69, 0.82)), url("schs1.jpeg");
       background-image: linear-gradient(rgba(11, 37, 69, 0.82), rgba(11, 37, 69, 0.82)), url("schs1.JPEG");
       background-size: cover;
@@ -130,7 +129,7 @@
       justify-content: center;
       text-align: center;
       color: #ffffff;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
 
     .hero-inner-content {
@@ -143,18 +142,16 @@
       margin-bottom: 20px;
       font-weight: 800;
       line-height: 1.25;
-      text-transform: uppercase;
       letter-spacing: -0.5px;
     }
 
     .hero-showcase p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       margin-bottom: 30px;
       color: #dae3e5;
-      font-weight: 400;
     }
 
-    .explore-action-btn {
+    .explore-btn {
       display: inline-block;
       background-color: #ffcc00;
       color: #0b2545;
@@ -164,18 +161,26 @@
       border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      transition: background-color 0.3s ease;
     }
 
-    .explore-action-btn:hover {
+    .explore-btn:hover {
       background-color: #e6b800;
-      transform: translateY(-2px);
     }
 
     /* ==========================================================================
-       4. PRIMARY MATERIAL DIVISIONS GRID (Fluid Anti-Crunch Grid System)
+       4. MATERIAL SECTIONS (Background: cement2-item.jpg)
        ========================================================================== */
-    .main-section-wrapper {
+    .materials-parallax-section {
+      position: relative;
+      background-image: linear-gradient(rgba(244, 246, 249, 0.92), rgba(244, 246, 249, 0.92)), url("cement2-item.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      width: 100%;
+    }
+
+    .section-wrapper {
       max-width: 1200px;
       margin: 0 auto;
       padding: 80px 20px;
@@ -200,69 +205,68 @@
 
     .divisions-fluid-grid {
       display: grid;
-      /* Sets dynamic grid columns down to 260px so mobile phone viewports will never squeeze rows */
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      /* Drops mobile columns layout safely to 280px to block vertical overlap text crowding */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
 
     .division-item-card {
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      min-height: 400px;
+      background-color: #ffffff;
       border-radius: 8px;
       overflow: hidden;
       display: flex;
-      align-items: flex-end;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex-direction: column;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
     }
 
     .division-item-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
-    /* Assignment: cement-item.jpg or cement2-item.jpg */
-    .img-premium-cement {
-      background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.88)), url("cement2-item.jpg");
-      background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.88)), url("cement-item.jpg");
-    }
-
-    /* Assignment: schs3.jpg or schs4.jpg or cement3-item.jpg fallback background rules */
-    .img-mixer-tank {
-      background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.88)), url("schs3.jpg");
-      background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.88)), url("schs4.jpg");
-      background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.88)), url("cement3-item.jpg");
-    }
-
-    /* Assignment: schs5.jpg */
-    .img-machinery-excavation {
-      background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.88)), url("schs5.jpg");
-    }
-
-    .card-caption-overlay {
-      padding: 30px 25px;
-      color: #ffffff;
+    /* Dynamic Multi-Asset Graphics Carousel Blocks */
+    .card-graphic-display {
+      height: 220px;
       width: 100%;
+      display: flex;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card-caption-overlay h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      color: #ffcc00;
+    /* Slideshow frame layers inside cards */
+    .slide-img {
+      flex: 1;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.4s ease;
+    }
+
+    .slide-img:hover {
+      transform: scale(1.06);
+    }
+
+    .card-body-content {
+      padding: 25px;
+      background-color: #ffffff;
+      flex-grow: 1;
+    }
+
+    .card-body-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #0b2545;
       font-weight: 700;
     }
 
-    .card-caption-overlay p {
+    .card-body-content p {
       font-size: 0.95rem;
-      opacity: 0.95;
-      line-height: 1.5;
+      color: #4a5568;
+      line-height: 1.6;
     }
 
     /* ==========================================================================
-       5. ABOUT SPLIT COLUMN CONTAINER (Uses store image: schs2.jpeg)
+       5. ABOUT SPLIT SECTION (Background Box: schs2.jpeg)
        ========================================================================== */
     .about-split-row {
       display: flex;
@@ -307,7 +311,7 @@
     }
 
     /* ==========================================================================
-       6. GOOGLE MAPS WRAPPER
+       6. GOOGLE MAPS LAYOUT CONTROLS
        ========================================================================== */
     .map-fluid-shell {
       overflow: hidden;
@@ -341,10 +345,10 @@
     }
 
     /* ==========================================================================
-       8. RIGID RESPONSIVE BREAKDOWN CONTROLS (Prevents Lapping & Compressing)
+       8. RESPONSIVE CONTROLS (Locks stacking rules to clear mobile congestion)
        ========================================================================== */
     @media (max-width: 768px) {
-      .utility-contact-bar {
+      .utility-bar {
         flex-direction: column;
         gap: 6px;
         padding: 12px 10px;
@@ -363,7 +367,7 @@
       }
 
       .hero-showcase {
-        padding: 50px 15px;
+        padding: 60px 15px;
         min-height: 55vh;
       }
 
@@ -371,12 +375,7 @@
         font-size: 2.1rem;
       }
 
-      .hero-showcase p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-      }
-
-      .main-section-wrapper {
+      .section-wrapper {
         padding: 50px 15px;
       }
 
@@ -384,22 +383,22 @@
         font-size: 1.75rem;
       }
 
+      .divisions-fluid-grid {
+        grid-template-columns: 1fr; /* Rigid stack alignment removes squeeze limitations entirely */
+      }
+
+      .card-graphic-display {
+        height: 190px; /* Scales card viewports gracefully down on smaller smartphone screens */
+      }
+
       .about-split-row {
-        flex-direction: column; /* Stacks column components straight down vertically to prevent text overlap bugs */
+        flex-direction: column;
         padding: 25px 20px;
         gap: 25px;
       }
 
       .about-right-image {
-        min-height: 250px; /* Locks concrete structural geometry baseline sizing on mobile screens */
-      }
-
-      .divisions-fluid-grid {
-        grid-template-columns: 1fr; /* Rigid clean stack distribution configuration */
-      }
-
-      .division-item-card {
-        min-height: 360px;
+        min-height: 250px;
       }
 
       .map-fluid-shell iframe {
@@ -410,14 +409,16 @@
 </head>
 <body>
 
-  <div class="utility-contact-bar">
-    <span>   Location: Near JK Bank Kambal Danga Udhampur (J&K)</span>
+  <!-- Top Contact Details Info Bar Block -->
+  <div class="utility-bar">
+    <span>📍 Location: Near JK Bank Kambal Danga Udhampur (J&K)</span>
     <span>📞 Call: <a href="tel:9622128720">9622128720</a> | <a href="tel:9797560287">9797560287</a> | <a href="tel:9419175521">9419175521</a></span>
   </div>
 
+  <!-- Main Sticky Header Navigation Frame -->
   <header>
     <div class="nav-container">
-      <div class="brand-logo">SHARMA CEMENT & HARDWARE STORE</span></div>
+      <div class="brand-logo">SHARMA <span>CEMENT & HARDWARE</span></div>
       <nav>
         <a href="#home">Home</a>
         <a href="#materials">Materials</a>
@@ -427,43 +428,65 @@
     </div>
   </header>
 
+  <!-- Hero Landing Showcase Section (Background Image Asset: schs1.jpeg) -->
   <section class="hero-showcase" id="home">
     <div class="hero-inner-content">
       <h1>Reliable Material Supply For Sustainable Structures</h1>
       <p>Wholesale distribution of premium high-strength cement, TMT bars, sand/stone/bajri, excavator, water tank/mixer machine etc.</p>
-      <a href="#materials" class="explore-action-btn">Explore Materials</a>
+      <a href="#materials" class="explore-btn">Explore Materials</a>
     </div>
   </section>
 
-  <section class="main-section-wrapper" id="materials">
-    <h2 class="section-headline">Our Primary Material Divisions</h2>
-    <p class="section-subheadline">Deals in all types of construction materials</p>
-    
-    <div class="divisions-fluid-grid">
-      <div class="division-item-card img-premium-cement">
-        <div class="card-caption-overlay">
-          <h3>Premium Cement Stock</h3>
-          <p>Authorized stock of high-strength, water-resistant premium grade cement optimized for strong foundations and heavy structural layouts.</p>
+  <!-- Materials Container Section (Background Image Asset: cement2-item.jpg) -->
+  <section class="materials-parallax-section" id="materials">
+    <div class="section-wrapper">
+      <h2 class="section-headline">Our Primary Material Divisions</h2>
+      <p class="section-subheadline">Deals in all types of construction materials</p>
+      
+      <div class="divisions-fluid-grid">
+        
+        <!-- Division Card 1: Premium Cement Stock (Assigned Assets: cement-item.jpg.jpeg, cement3-item.jpg, cement4-item.jpg) -->
+        <div class="division-item-card">
+          <div class="card-graphic-display">
+            <div class="slide-img" style="background-image: url('cement-item.jpg.jpeg');"></div>
+            <div class="slide-img" style="background-image: url('cement3-item.jpg');"></div>
+            <div class="slide-img" style="background-image: url('cement4-item.jpg');"></div>
+          </div>
+          <div class="card-body-content">
+            <h3>Premium Cement Stock</h3>
+            <p>Authorized stock of high-strength, water-resistant premium grade cement optimized for strong foundations and heavy structural layouts.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="division-item-card img-mixer-tank">
-        <div class="card-caption-overlay">
-          <h3>Reliable Mixer &amp; Water Tank Services</h3>
-          <p>Complete supply pathways for heavy industrial structural projects.</p>
+        <!-- Division Card 2: Mixer & Water Tank Services (Assigned Assets: schs3.jpeg, schs4.jpeg) -->
+        <div class="division-item-card">
+          <div class="card-graphic-display">
+            <div class="slide-img" style="background-image: url('schs3.jpeg');"></div>
+            <div class="slide-img" style="background-image: url('schs4.jpeg');"></div>
+          </div>
+          <div class="card-body-content">
+            <h3>Reliable Mixer &amp; Water Tank Services</h3>
+            <p>Complete supply pathways for heavy industrial structural projects matching your framework criteria safely.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="division-item-card img-machinery-excavation">
-        <div class="card-caption-overlay">
-          <h3>Machinery Logistics</h3>
-          <p>Heavy-duty excavation. Strong Machines for Strong Foundations.</p>
+        <!-- Division Card 3: Machinery Excavation Logistics (Assigned Asset: schs5.jpeg) -->
+        <div class="division-item-card">
+          <div class="card-graphic-display">
+            <div class="slide-img" style="background-image: url('schs5.jpeg'); width: 100%; flex: none;"></div>
+          </div>
+          <div class="card-body-content">
+            <h3>Machinery Division</h3>
+            <p>Heavy-duty excavation. Strong Machines for Strong Foundations.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section class="main-section-wrapper" id="about" style="background-color: #ffffff; max-width: 100%;">
+  <!-- About History Row Section Component (Background Image Asset: schs2.jpeg) -->
+  <section class="section-wrapper" id="about" style="background-color: #ffffff; max-width: 100%;">
     <div style="max-width: 1200px; margin: 0 auto;">
       <div class="about-split-row">
         <div class="about-left-text">
@@ -475,13 +498,14 @@
     </div>
   </section>
 
-  <section class="main-section-wrapper" id="location">
+  <!-- Official Google Maps Location Component -->
+  <section class="section-wrapper" id="location">
     <h2 class="section-headline">Visit Our Sales Yard</h2>
     <p class="section-subheadline">Find us near JK Bank, Kambal Danga, Udhampur. Come by for wholesale rates and heavy material loading.</p>
     
     <div class="map-fluid-shell">
       <iframe 
-        src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.7347947036483!2d75.03814860889008!3d32.947732273482586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780497639949!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.7347947036483!2d75.03814860889008!3d32.947732273482586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780498350633!5m2!1sen!2sin" 
         width="100%" 
         height="450" 
         style="border:0;" 
@@ -492,6 +516,7 @@
     </div>
   </section>
 
+  <!-- Systems Global Footer Footer Element -->
   <footer>
     <p>© 2026 <span>Sharma Cement & Hardware Store</span>. Built for heavy-duty business performance.</p>
   </footer>
