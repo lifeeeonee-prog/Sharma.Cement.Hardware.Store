@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sharma Cement & Hardware Store</title>
   
-  <!-- Premium, readable business typography -->
+  <!-- Premium Business Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2 family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     /* Global Reset & Colors */
     :root {
-      --primary-dark: #111625;   /* Deep slate corporate blue */
-      --accent-gold: #F2A900;    /* Industrial hardware yellow/gold */
-      --text-main: #2D3748;      /* Soft charcoal for easy reading */
-      --bg-light: #F8FAFC;       /* Off-white background */
+      --primary-dark: #111625;   
+      --accent-gold: #F2A900;    
+      --text-main: #2D3748;      
+      --bg-light: #F8FAFC;       
     }
 
     body {
@@ -43,6 +43,15 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+    }
+
+    .top-bar a {
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+    
+    .top-bar a:hover {
+      text-decoration: underline;
     }
 
     /* Main Header Navigation */
@@ -163,7 +172,7 @@
       font-weight: 600;
     }
 
-    /* Category Showcase Section */
+    /* Standard Core Section Styling */
     .main-section {
       max-width: 1200px;
       margin: 90px auto;
@@ -240,6 +249,48 @@
       margin: 0;
     }
 
+    /* Construction Project Gallery Section */
+    .gallery-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .gallery-item {
+      position: relative;
+      width: 270px;
+      height: 200px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      color: #FFFFFF;
+      padding: 15px 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+    }
+
     /* Corporate Footer */
     footer {
       background: var(--primary-dark);
@@ -249,22 +300,23 @@
       font-size: 14px;
       border-top: 4px solid var(--accent-gold);
     }
-
-    footer p {
-      margin: 0;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Top Info Strip -->
+  <!-- Top Info Strip (Now with clickable direct actions) -->
   <div class="top-bar">
-    <div>📞 PHONE: +91 9622128720,9797560287,9419175521 | ✉️ EMAIL: sharma.cement.hardware@gmail.com</div>
+    <div>📍Near JK Bank Kambal Danga Udhampur </div>
+    <div>
+      📞 Call: <a href="PHONE":+919622128720,9797560287,9419175521">+91 YOUR_PHONE_NUMBER_HERE</a> 
+      | 
+      ✉️ Email: <a href="EMAIL: sharma.cement.hardware@gmail.com">YOUR_GMAIL_HERE@gmail.com</a>
+    </div>
   </div>
 
   <!-- Header Navigation -->
   <header>
-    <div class="logo">SHARMA CEMENT & HARDWARE STORE <span>.</span></div>
+    <div class="logo">SHARMA CEMENT & HARDWARE STORE<span>.</span></div>
     <nav>
       <a href="#" class="active">Home</a>
       <a href="#">About Details</a>
@@ -276,8 +328,9 @@
   <!-- Big Enterprise Hero Section -->
   <section class="hero">
     <h1>Reliable Material Supply For Sustainable Structures</h1>
-    <p>Wholesale distribution of premium high-strength cement, structural steel reinforcing rods, and industrial architectural hardware components.</p>
-    <a href="tel:+919622128720" class="btn-action">Request Wholesale Price List</a>
+    <p>Wholesale distribution of premium high-strength cement, TMT steel, excavator, sand/stone/bajri & water tank/mixer machine etc.</p>
+    <!-- Mobile call integration button -->
+    <a href="tel:+919622128720" class="btn-action">📞 Call For Live Rates</a>
   </section>
 
   <!-- Corporate Trust Badges / Stats Block -->
@@ -315,9 +368,33 @@
       <div class="product-card">
         <img src="hardware-item.jpg" alt="Industrial Hardware Fittings and Fasteners">
         <div class="card-content">
-          <h3>Other Construction Material</h3>
-          <p>A completely integrated catalog featuring sand, stone, bajri, excavator, mixer machine, water tank etc.</p>
+          <h3>Construction materials</h3>
+          <p>A Sand, Stone, Bajri, JCB excavator, TMT steel bar etc .</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW FEATURE: Construction Projects Gallery -->
+  <section class="main-section" style="background-color: #FFFFFF; max-width: 100%; padding: 60px 5%; margin: 0;">
+    <h2 class="section-headline">Projects Built With Our Materials</h2>
+    <p class="section-sub">Our raw supplies lay the foundation for robust residential and commercial landmarks.</p>
+    
+    <div class="gallery-grid">
+      <!-- Project 1 -->
+      <div class="gallery-item">
+        <img src="project1.jpg" alt="Residential Structure Foundation">
+        <div class="gallery-caption">Residential Infrastructure</div>
+      </div>
+      <!-- Project 2 -->
+      <div class="gallery-item">
+        <img src="project2.jpg" alt="Commercial Column Casting">
+        <div class="gallery-caption">Commercial Pillars</div>
+      </div>
+      <!-- Project 3 -->
+      <div class="gallery-item">
+        <img src="project3.jpg" alt="Heavy Steel Roof Installation">
+        <div class="gallery-caption">Industrial Roofing</div>
       </div>
     </div>
   </section>
