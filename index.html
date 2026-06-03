@@ -6,7 +6,79 @@
   <title>Sharma Cement & Hardware Store</title>
   
   <style>
-    /* ==========================================================================
+   /* ==========================================================================
+   ABOUT US PARALLEL IMAGES GRID SYSTEM
+   ========================================================================== */
+.about-parallel-layout {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.about-text-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text-content h3 {
+  color: #0b2545;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.about-text-content p {
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+.about-images-parallel-row {
+  flex: 1.2;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Forces images to stand perfectly parallel */
+  gap: 15px;
+  width: 100%;
+}
+
+.parallel-img-box {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Image assignments matching both casing styles for production server fallbacks */
+.img-schs1 {
+  background-image: url("schs1.jpeg");
+  background-image: url("schs1.JPEG");
+}
+
+.img-schs2 {
+  background-image: url("schs2.jpeg");
+  background-image: url("schs2.JPEG");
+}
+
+/* Anti-Congestion Mobile Adjustment */
+@media (max-width: 768px) {
+  .about-parallel-layout {
+    flex-direction: column; /* Stacks text above images on mobile devices */
+    gap: 25px;
+  }
+  
+  .about-images-parallel-row {
+    /* Keeps images parallel on tablets but lets them look balanced on smaller devices */
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+  }
+
+  .parallel-img-box {
+    height: 200px; /* Lowers image frames on smartphones so screens don't get congested */
+  }
+ /* ==========================================================================
        1. GLOBAL RESET & ANTI-CONGESTION SYSTEM
        ========================================================================== */
     * {
@@ -418,7 +490,7 @@
   <!-- Main Sticky Header Navigation Frame -->
   <header>
     <div class="nav-container">
-      <div class="brand-logo">SHARMA <span>CEMENT & HARDWARE</span></div>
+      <div class="brand-logo">SHARMA CEMENT & HARDWARE STORE</span></div>
       <nav>
         <a href="#home">Home</a>
         <a href="#materials">Materials</a>
@@ -486,18 +558,23 @@
   </section>
 
   <!-- About History Row Section Component (Background Image Asset: schs2.jpeg) -->
-  <section class="section-wrapper" id="about" style="background-color: #ffffff; max-width: 100%;">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <div class="about-split-row">
-        <div class="about-left-text">
-          <h3>A Legacy of Trust For Over 30 Years</h3>
-          <p>Welcome to Sharma Cement & Hardware Store. For over three decades, we have served as a foundational partner for local builders, engineering crews, and commercial logistics developers. We specialize in distributing top-tier structural materials, featuring authorized high-durability cement lines, premium structural equipment provisions, and specialized logistics services to keep your framework resilient.</p>
-        </div>
-        <div class="about-right-image"></div>
+<section class="section-wrapper" id="about" style="background-color: #ffffff; max-width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    
+    <div class="about-parallel-layout">
+      <div class="about-text-content">
+        <h3>A Legacy of Trust For Over 30 Years</h3>
+        <p>Welcome to Sharma Cement & Hardware Store. For over three decades, we have served as a foundational partner for local builders, engineering crews, and commercial logistics developers. We specialize in distributing top-tier structural materials, featuring authorized high-durability cement lines, premium structural equipment provisions, and specialized logistics services to keep your framework resilient.</p>
+      </div>
+      
+      <div class="about-images-parallel-row">
+        <div class="parallel-img-box img-schs1"></div>
+        <div class="parallel-img-box img-schs2"></div>
       </div>
     </div>
-  </section>
 
+  </div>
+</section>
   <!-- Official Google Maps Location Component -->
   <section class="section-wrapper" id="location">
     <h2 class="section-headline">Visit Our Sales Yard</h2>
