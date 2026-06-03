@@ -4,688 +4,407 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sharma Cement & Hardware Store</title>
-
+  
   <style>
-   .btn-whatsapp-block {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background-color: #25D366;
-  color: #FFFFFF !important;
-  text-decoration: none;
-  padding: 14px 32px;
-  font-weight: 700;
-  border-radius: 50px;
-  font-size: 16px;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s ease;
-  animation: whatsappPulse 2s infinite;
-}
-
-.btn-whatsapp-block:hover {
-  background-color: #20ba5a;
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-  text-decoration: none !important;
-}
-
-.btn-whatsapp-block svg {
-  width: 20px;
-  height: 20px;
-  fill: #FFFFFF;
-}
-
-@keyframes whatsappPulse {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-    html {
-      scroll-behavior: smooth;
-    }
-
-    :root {
-      --primary-dark: #0F172A;   
-      --accent-gold: #FF5500;    
-      --whatsapp-green: #25D366;
-      --text-main: #1E293B;      
-      --bg-light: #FFFFFF;       
+    /* ==========================================================================
+       1. GLOBAL RESET & BASE STYLES
+       ========================================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; /* Fixed typo that caused mobile layout distortion */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: var(--text-main);
-      background-color: var(--bg-light);
-    }
-/* This applies rules ONLY to screens smaller than 768px (tablets and phones) */
-@media (max-width: 768px) {
-  
-  /* Force navigation links to stack or wrap cleanly */
-  header nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  /* Make your columns stack vertically instead of pushing side-by-side */
-  .divisions-container, .grid-layout { 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  /* Ensure images shrink to fit the mobile screen width */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
- h1, h2, h3 {
-      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
-      font-weight: 700;
-      margin: 0;
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
     }
 
+    /* Top Information Utility Bar */
     .top-bar {
-      background-color: var(--accent-gold);
-      color: #FFFFFF;
-      padding: 10px 5%;
-      font-size: 14px;
-      font-weight: 600;
+      background-color: #061526;
+      color: #dae3e5;
+      font-size: 0.85rem;
+      padding: 8px 5%;
+      text-align: center;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 15px;
       flex-wrap: wrap;
+      border-bottom: 1px solid #10355c;
     }
 
     .top-bar a {
-      color: #FFFFFF;
+      color: #ffcc00;
       text-decoration: none;
     }
 
+    /* ==========================================================================
+       2. NAVIGATION BAR
+       ========================================================================== */
     header {
-      background: var(--primary-dark);
-      padding: 20px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background-color: #0b2545;
+      color: #ffffff;
+      padding: 15px 5%;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .logo {
-      color: #FFFFFF !important;
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #eef4f8;
+      letter-spacing: 0.5px;
     }
 
     .logo span {
-      color: var(--accent-gold);
+      color: #ffcc00;
     }
 
     nav {
       display: flex;
-      align-items: center;
+      gap: 20px;
     }
 
     nav a {
-      color: #FFFFFF !important; 
+      color: #ffffff;
       text-decoration: none;
-      margin-left: 25px;
-      font-weight: 600;
-      font-size: 16px;
-      transition: color 0.2s ease-in-out;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: var(--accent-gold) !important;
+      color: #ffcc00;
     }
 
-    .btn-whatsapp-nav {
-      background-color: var(--whatsapp-green);
-      color: #FFFFFF !important;
-      padding: 8px 16px;
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      padding: 6px 14px;
       border-radius: 4px;
-      font-weight: 700;
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-left: 25px;
-      transition: opacity 0.2s;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
     }
 
-    .btn-whatsapp-nav:hover {
+    .whatsapp-btn:hover {
       opacity: 0.9;
     }
 
-    /* FIXED BACKGROUND HERO FILE EXTENSIONS TO .JPG */
+    /* ==========================================================================
+       3. HERO SECTION (Main Storefront Display)
+       ========================================================================== */
     .hero {
       position: relative;
-      padding: 140px 5%;
-      text-align: center;
-      color: #FFFFFF;
-      overflow: hidden;
-      background-color: #1E293B;
-    }
-<meta name="viewport"
- content="width=device-width,
- initial-scale=1.0">
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 1;
+      /* Handles lowercase/uppercase asset matching gracefully on GitHub servers */
+      background-image: linear-gradient(rgba(11, 37, 69, 0.8), rgba(11, 37, 69, 0.8)), url("schs1.jpeg");
+      background-image: linear-gradient(rgba(11, 37, 69, 0.8), rgba(11, 37, 69, 0.8)), url("schs1.JPEG");
       background-size: cover;
-      background-position: center center;
+      background-position: center;
       background-repeat: no-repeat;
-      animation: alternateBanner 10s infinite ease-in-out;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      padding: 60px 20px;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    @keyframes alternateBanner {
-      0%, 45% {
-        background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('schs1.jpg');
-      }
-      55%, 100% {
-        background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('schs2.jpg');
-      }
+      max-width: 800px;
+      width: 100%;
     }
 
     .hero h1 {
-      font-size: 46px;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      font-weight: 800;
       line-height: 1.2;
     }
 
     .hero p {
-      font-size: 19px;
-      color: #E2E8F0;
-      max-width: 750px;
-      margin: 0 auto 35px auto;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      color: #dae3e5;
     }
 
-    .btn-action {
-      background: var(--accent-gold);
-      color: #FFFFFF;
-      padding: 15px 35px;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 4px;
+    .cta-btn {
       display: inline-block;
-      text-transform: uppercase;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-      transition: all 0.2s;
-    }
-
-    .btn-action:hover {
-      background: #FFFFFF;
-      color: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    .stats-container {
-      background: #FFFFFF;
-      padding: 35px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 30px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
-      max-width: 1100px;
-      margin: -40px auto 0 auto;
-      position: relative;
-      z-index: 10;
-      border-radius: 6px;
-      border-bottom: 4px solid var(--accent-gold);
-    }
-
-    .stat-box {
-      text-align: center;
-      flex: 1;
-      min-width: 200px;
-    }
-
-    .stat-number {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      margin-bottom: 5px;
-    }
-
-    .stat-label {
-      font-size: 13px;
-      color: #64748B;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      background-color: #ffcc00;
+      color: #0b2545;
+      padding: 12px 30px;
       font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s ease;
     }
 
-    .main-section {
+    .cta-btn:hover {
+      background-color: #e6b800;
+    }
+
+    /* ==========================================================================
+       4. PRODUCT CATEGORIES BLOCK (Fluid Grid)
+       ========================================================================== */
+    .section-container {
       max-width: 1200px;
-      margin: 80px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    .section-headline {
-      font-size: 32px;
-      color: var(--primary-dark);
-      margin-bottom: 12px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-headline::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: var(--accent-gold);
-      margin: 10px auto 0 auto;
-    }
-
-    .section-sub {
-      color: #64748B;
-      font-size: 16px;
-      margin-bottom: 40px;
-    }
-
-    .about-text {
-      max-width: 800px;
       margin: 0 auto;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #475569;
+      padding: 60px 20px;
     }
 
-    .grid-layout {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .product-card {
-      background: #FFFFFF;
-      border-radius: 6px;
-      overflow: hidden;
-      width: 270px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border: 1px solid #E2E8F0;
-      text-align: left;
-      transition: all 0.3s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card-content h3 {
-      font-size: 18px;
-      color: var(--primary-dark);
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #0b2545;
       margin-bottom: 10px;
     }
 
-    .card-content p {
-      color: #475569;
-      font-size: 13px;
-      line-height: 1.6;
-      margin: 0;
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+      font-size: 1rem;
     }
 
-    .contact-box {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 8px;
-      max-width: 600px;
-      margin: 0 auto 30px auto;
-      padding: 40px;
-      text-align: left;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    .grid-layout {
+      display: grid;
+      /* Corrected minmax viewport constraints to fit narrower smartphone widths */
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
 
-    .contact-item {
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    .contact-item strong {
-      color: var(--primary-dark);
-      display: block;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 5px;
-    }
-
-    .contact-item a {
-      color: var(--accent-gold);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 18px;
-    }
-
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
-
-    .btn-whatsapp-block {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background-color: var(--whatsapp-green);
-      color: #FFFFFF !important;
-      text-decoration: none;
-      padding: 12px 24px;
-      font-weight: 700;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background-color 0.2s;
-      margin-top: 10px;
-    }
-
-    .btn-whatsapp-block:hover {
-      background-color: #1ebd58;
-      text-decoration: none !important;
-    }
-
-    .map-container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 40px auto 0 auto;
+    .product-card {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 380px;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border: 1px solid #E2E8F0;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
-    .map-container iframe {
+    .card-cement {
+      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url("cement2-item.jpg");
+    }
+
+    .card-bricks {
+      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url("cement3-item.jpg");
+    }
+
+    .card-machinery {
+      background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url("cement4-item.jpg");
+    }
+
+    .card-text {
+      padding: 25px;
+      color: #ffffff;
       width: 100%;
-      height: 400px;
-      border: 0;
-      display: block;
     }
 
+    .card-text h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: #ffcc00;
+    }
+
+    .card-text p {
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    /* ==========================================================================
+       5. ABOUT SECTION (Flexible Split Row)
+       ========================================================================== */
+    .about-split {
+      display: flex;
+      align-items: stretch;
+      gap: 40px;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .about-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-text h3 {
+      color: #0b2545;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .about-image {
+      flex: 1;
+      width: 100%;
+      min-height: 320px;
+      background-image: url("schs2.jpeg");
+      background-image: url("schs2.JPEG");
+      background-size: cover;
+      background-position: center;
+      border-radius: 6px;
+    }
+
+    /* ==========================================================================
+       6. GLOBAL FOOTER
+       ========================================================================== */
     footer {
-      background: var(--primary-dark);
-      color: #94A3B8;
-      padding: 40px 5%;
+      background-color: #0b2545;
+      color: #ffffff;
       text-align: center;
-      font-size: 14px;
-      border-top: 4px solid var(--accent-gold);
+      padding: 40px 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    footer p span {
+      color: #ffcc00;
+    }
+
+    /* ==========================================================================
+       7. MOBILE RESPONSIVE MEDIA QUERIES
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .about-split {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .about-image {
+        min-height: 240px;
+      }
+
+      .grid-layout {
+        grid-template-columns: 1fr; /* Forces a single linear column layout on mobile cards */
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Contact Strip -->
   <div class="top-bar">
-    <div>Location: Near JK Bank Kambal Danga Udhampur</div>
-    <div>
-      📞 Call: <a href="9622128720, 9797560287, 9419175521">9622128720, 9797560287, 9419175521</a> 
-      | 
-      ✉️ Email: <a href="Email: sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a>
-    </div>
+    <span>📍 Near JK Bank Kambal Danga Udhampur</span>
+    <span>📞 Call: <a href="tel:9622128720">9622128720</a> | <a href="tel:9797560287">9797560287</a></span>
   </div>
 
+  <!-- Main Navigation Header -->
   <header>
-  /* ==========================================================================
-   1. HERO SECTION (Main Storefront Background)
-   ========================================================================== */
-section:first-of-type {
-  position: relative;
-  /* Points directly to your storefront image */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("schs1.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 80vh; /* Uses viewport height instead of fixed pixels */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  color: #ffffff;
-  text-align: center;
-}
-
-/* Fixes text box constraints so it doesn't lap or clip */
-section:first-of-type div {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-section:first-of-type h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-/* ==========================================================================
-   2. MATERIAL DIVISIONS & CARDS (With Custom Backgrounds)
-   ========================================================================== */
-/* Container layout that prevents congestion on mobile */
-.divisions-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Common Card Rules */
-.material-card {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  overflow: hidden;
-  min-height: 300px; /* Allows the box to expand dynamically if text grows */
-  display: flex;
-  align-items: flex-end; /* Pushes text content to the bottom of the image */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Individual Background Image Assignments */
-.card-cement {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("cement2-item.jpg");
-}
-
-.card-logistics {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("cement3-item.jpg");
-}
-
-.card-machinery {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("cement4-item.jpg");
-}
-
-/* Card inner text wrapper */
-.card-content {
-  padding: 30px;
-  color: #ffffff;
-  width: 100%;
-}
-
-.card-content h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: #ffcc00; /* High-contrast accent color for headers */
-}
-
-.card-content p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* ==========================================================================
-   3. MOBILE RESPONSIVE FIXES (Prevents layout lapping)
-   ========================================================================== */
-@media (max-width: 768px) {
-  section:first-of-type {
-    min-height: 60vh;
-    padding: 60px 15px;
-  }
-
-  section:first-of-type h1 {
-    font-size: 1.8rem;
-  }
-
-  .material-card {
-    min-height: 350px; /* Gives text more structural space on narrower screens */
-  }
-  
-  .card-content {
-    padding: 20px;
-  }
-
-  .card-content h3 {
-    font-size: 1.5rem;
-  }
-  <div class="logo">SHARMA CEMENT & HARDWARE STORE<span></span></div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#about">About Details</a>
-      <a href="#categories">Material Categories</a>
-      <a href="#contact">Get in Touch</a>
-      <div style="text-align: center; margin: 20px 0;">
-  <a href="https://api.whatsapp.com/send?phone=919622128720" target="_blank" class="btn-whatsapp-block">
-    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.488 1.449 5.412 1.451 5.428 0 9.845-4.414 9.848-9.842.002-2.63-1.013-5.101-2.859-6.95S14.838 1.03 12.21 1.03C6.78 1.03 2.365 5.442 2.361 10.871c-.001 1.97.513 3.894 1.492 5.62l-.991 3.619 3.704-.972c1.554.848 3.305 1.294 5.081 1.296zM17.5 14.37c-.28-.14-1.65-.814-1.906-.907-.256-.094-.443-.14-.63.14-.188.28-.724.908-.887 1.093-.163.186-.326.21-.606.07-.28-.14-1.18-.435-2.25-1.387-.83-.74-1.39-1.652-1.55-1.93-.16-.28-.017-.431.122-.571.126-.126.28-.326.42-.49.14-.163.187-.28.28-.465.093-.186.047-.35-.024-.49-.07-.14-.63-1.517-.862-2.077-.227-.547-.457-.473-.63-.482-.163-.008-.35-.01-.536-.01-.186 0-.49.07-.746.35-.256.28-.98 1.012-.98 2.467 0 1.455 1.058 2.862 1.204 3.049.145.186 2.083 3.182 5.047 4.46.705.304 1.256.486 1.684.622.71.226 1.354.194 1.864.118.57-.085 1.651-.674 1.884-1.326.233-.652.233-1.21.163-1.325-.07-.116-.256-.21-.536-.35z"/></svg>
-    Chat Live on WhatsApp
-  </a>
-</div>
-    </nav>
+    <div class="nav-container">
+      <div class="logo">SHARMA <span>CEMENT & HARDWARE</span></div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Materials</a>
+        <a href="#about">About</a>
+        <a class="whatsapp-btn" href="https://api.whatsapp.com/send?phone=919622128720" target="_blank">WhatsApp Chat</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
+  <!-- Hero Feature Panel (Uses schs1.jpeg) -->
+  <section class="hero" id="home">
     <div class="hero-content">
       <h1>Reliable Material Supply For Sustainable Structures</h1>
-      <p>Wholesale distribution of premium high-strength cement, bricks, water tank, sand/stone/bajri, TMT bar,excavator, water tank/mixer machine etc.</p>
-      <a href="#contact" class="btn-action">About our Store</a>
+      <p>Wholesale distribution of premium high-strength cement, structural elements, machinery fleet assets, and custom site aggregates.</p>
+      <a href="#products" class="cta-btn">Explore Materials</a>
     </div>
   </section>
 
-  <section class="stats-container">
-    <div class="stat-box">
-      <div class="stat-number">30+</div>
-      <div class="stat-label">Years of Busiiness</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">100%</div>
-      <div class="stat-label">Certified Brands Only</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">500+</div>
-      <div class="stat-label">Major Projects Supplied</div>
-    </div>
-  </section>
-
-  <section id="about" class="main-section">
-    <h2 class="section-headline">About Our Store</h2>
-    <p class="section-sub">A legacy of trust and premium structural materials.</p>
-    <div class="about-text">
-      Welcome to Sharma Cement & Hardware Store. For over 30 years, we have been a trusted cornerstone for local contractors, engineers, and home builders. We specialize in distributing top-tier construction supplies, featuring authorized high-durability cement, premium water tank solutions, high-grade brick inventory, and specialized wholesale construction equipment services. Our commitment to absolute quality control and clear, wholesale pricing keeps your structures sound for decades.
-    </div>
-  </section>
-
-  <section id="categories" class="main-section" style="border-top: 1px solid #E2E8F0; padding-top: 60px;">
-    <h2 class="section-headline">Our Primary Material & Equipment Divisions</h2>
-    <p class="section-sub">Authorized stock and heavy infrastructure logistics handled directly by our sales yard.</p>
+  <!-- Material Catalog Grid Items -->
+  <section class="section-container" id="products">
+    <h2 class="section-title">Our Primary Material Divisions</h2>
+    <p class="section-subtitle">Authorized stock and structural infrastructure pipelines handled directly by our sales yard.</p>
     
     <div class="grid-layout">
-      <!-- Card 1: Fixed Cement Image Extension -->
-      <div class="product-card">
-        <img src="cement-item.jpg" alt="Premium Cement Supplies">
-        <div class="card-content">
-          <h3> Cement</h3>
-          <p>Authorized stock of high-strength, water-resistant premium grade cement optimized for strong foundations and concrete structures.</p>
+      <!-- Item 1: Cement (cement2-item.jpg) -->
+      <div class="product-card card-cement">
+        <div class="card-text">
+          <h3>Premium Cement Stock</h3>
+          <p>Authorized stock of high-strength, water-resistant premium grade cement optimized for strong foundations and heavy structural layouts.</p>
         </div>
       </div>
 
-      <!-- Card 2: Fixed to .jpg -->
-      <div class="product-card">
-        <img src="schs3.jpg" alt="Sharma Water Tank Services">
-        <div class="card-content">
-          <h3>Logistics & Water Systems</h3>
-          <p>Complete supply pathways for industrial water tank platforms and site infrastructure assets directly matching your project demands.</p>
+      <!-- Item 2: Logistics/Masonry (cement3-item.jpg) -->
+      <div class="product-card card-bricks">
+        <div class="card-text">
+          <h3>Logistics &amp; Masonry Supply</h3>
+          <p>Complete supply pathways for heavy industrial structural brick projects and site platform requirements matching your project criteria.</p>
         </div>
       </div>
 
-      <!-- Card 3: Fixed to .jpg -->
-      <div class="product-card">
-        <img src="schs4.jpg" alt="Concrete Mixer Machine Equipment">
-        <div class="card-content">
-          <h3>Concrete Mixer Machine Fleet</h3>
-          <p>Heavy-duty, high-performance site machinery rentals and distribution to ensure uniform mortar and concrete mixing layouts.</p>
-        </div>
-      </div>
-
-      <!-- Card 4: Fixed to .jpg -->
-      <div class="product-card">
-        <img src="schs5.jpg" alt="JCB Heavy Duty Excavator Machine">
-        <div class="card-content">
-          <h3>Heavy Machinery & JCB Logistics</h3>
-          <p>Professional earthmoving and excavation equipment assets optimized for fast site clearance, foundation trenching, and volume leveling.</p>
+      <!-- Item 3: Fleet/Machinery (cement4-item.jpg) -->
+      <div class="product-card card-machinery">
+        <div class="card-text">
+          <h3>Machinery &amp; Fleet Asset Control</h3>
+          <p>Heavy-duty excavation, volume structural sorting layout engines, and mixing logistics handled directly by professional yards.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="main-section" style="border-top: 1px solid #E2E8F0; padding-top: 60px;">
-    <h2 class="section-headline">Get In Touch & Find Us</h2>
-    <p class="section-sub">Contact our sales desk directly for wholesale rates, material site drop-offs, or navigate directly to our yard.</p>
-    
-    <div class="contact-box">
-      <div class="contact-item">
-        <strong>Main Store Numbers</strong>
-        <a href="Phone:9622128720, 6005331055"> 96221 28720, 6005331055</a><br>
-        <a href="Phone:9797560287" style="font-size:16px;"> 97975 60287</a> | 
-        <a href="Phone:9419175521" style="font-size:16px;"> 94191 75521</a>
+  <!-- About Information Section (Uses schs2.jpeg) -->
+  <section class="section-container" id="about">
+    <div class="about-split">
+      <div class="about-text">
+        <h3>A Legacy of Trust For Over 30 Years</h3>
+        <p>Welcome to Sharma Cement & Hardware Store. For over three decades, we have served as a foundational partner for local builders, engineering crews, and commercial logistics developers. We specialize in distributing top-tier structural materials, featuring authorized high-durability cement lines, premium structural equipment provisions, and specialized logistics services to keep your framework resilient.</p>
       </div>
-      
-      <div class="contact-item">
-        <strong>Official Email Address</strong>
-        <a href="✉️ Email: sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a>
-      </div>
+      <div class="about-image"></div>
+    </div>
+  </section>
 
-      <div class="contact-item">
-        <strong>Our Business Hours</strong>
-        <span style="font-size: 16px; color: #475569; font-weight: 500;">Monday - Sunday: 8:00 AM - 7:00 PM </span>
-      </div>
-
-      <div style="text-align: center; border-top: 1px solid #E2E8F0; padding-top: 20px; margin-top: 20px;">
-        <!-- Fixed WhatsApp API Format Link -->
-        <a href="https://api.whatsapp.com/send?phone=9622128720" target="_blank" class="btn-whatsapp-block">
-           Message Us on WhatsApp
-        </a>
-      </div>
-     <footer>
-    <p>© 2026 Sharma Cement & Hardware Store. Built for heavy-duty business performance.</p>
+  <!-- Footer Layout -->
+  <footer>
+    <p>&copy; 2026 <span>Sharma Cement & Hardware Store</span>. Built for heavy-duty business performance.</p>
   </footer>
 
 </body>
