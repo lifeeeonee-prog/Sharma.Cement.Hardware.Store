@@ -253,7 +253,7 @@
   }
 
   /* CUSTOM FEEDBACK PORTAL */
-  #feedback { background: var(--navy-mid); }
+  #feedback { background: var(--navy-mid); padding: 5rem 2rem; }
   .feedback-box {
     background: var(--navy);
     border: 1px solid rgba(212,160,23,0.3);
@@ -343,23 +343,22 @@
 
 <nav>
   <div class="nav-logo">
-    SHARMA CEMENT & HARDWARE STORE
-    <span>Near JK Bank Kambal Danga Udhampur</span> 
+    SHARMA CEMENT & HARDWARE STORE[cite: 1]
+    <span>Near JK Bank Kambal Danga Udhampur</span>[cite: 1]
   </div>
+  <!-- UPDATED NAV OPTIONS -->
   <ul class="nav-links">
-    <li><a class="tab-btn active-tab" onclick="openLayer('main-view')">Home</a></li>
-    <li><a class="tab-btn" onclick="openLayer('cement-view')">Cement</a></li>
-    <li><a class="tab-btn" onclick="openLayer('tmt-view')">TMT Bars</a></li>
-    <li><a class="tab-btn" onclick="openLayer('jcb-view')">JCB & Machinery</a></li>
+    <li><a class="tab-btn active-tab" onclick="openLayer('home-view')">Home</a></li>
+    <li><a class="tab-btn" onclick="openLayer('about-view')">About Us</a></li>
+    <li><a class="tab-btn" onclick="openLayer('materials-view')">Materials</a></li>
+    <li><a class="tab-btn" onclick="openLayer('find-view')">Find Us</a></li>
     <li><a class="tab-btn" onclick="openLayer('feedback-view')">Feedback</a></li>
-    <li><a href="#contact" class="nav-cta">Find Us</a></li>
   </ul>
 </nav>
 
-<!-- LAYER 1: MULTI-PAGE PRIMARY DASHBOARD LAYER -->
-<div id="layer-main-view" class="page-layer active-layer">
+<!-- LAYER 1: HOME LAYER -->
+<div id="layer-home-view" class="page-layer active-layer">
   <section class="hero" id="home">
-    <!-- Automated Background Carousels mapped dynamically to background1, 2, and 3 -->
     <div class="slider-container">
       <div class="hero-slide active-slide" style="background-image: url('background1.jpeg');"></div>
       <div class="hero-slide" style="background-image: url('background2.jpeg');"></div>
@@ -367,128 +366,133 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Udhampur, Jammu & Kashmir</div>
+      
       <h1>
         Built on <em>Trust.</em><br>
-        Backed by <em>Strength.</em>
+        Backed by <em>Strength.</em>[cite: 1]
       </h1>
-      <p class="hero-sub">Authorized wholesale distributor of premium cement, TMT bars, sand, stone, machinery and all construction materials — serving Udhampur for over 30 years.</p>
+      <p class="hero-sub">Authorized wholesale distributor of premium cement, TMT bars, sand, stone, machinery and all construction materials — serving Udhampur for over 30 years.</p>[cite: 1]
       
       <div class="hero-btns">
-        <a onclick="openLayer('cement-view')" class="btn-primary">Explore Materials ↓</a>
-        <a href="#contact" class="btn-outline">Find Us Directly</a>
+        <a onclick="openLayer('materials-view')" class="btn-primary">View Materials ↓</a>[cite: 1]
+        <a onclick="openLayer('find-view')" class="btn-outline">Find Us</a>[cite: 1]
       </div>
 
-      <!-- GOOGLE RATING WIDGET INTEGRATION -->
-      <div class="google-rating-bar">
-        <div class="rating-info">
-          <div class="g-logo"><i class="fa-brands fa-google"></i></div>
-          <div>
-            <div class="rating-score">4.9 / 5.0</div>
             <p style="font-size: 0.75rem; color: var(--cement); letter-spacing: 1px; text-transform: uppercase;">Google Business Profile</p>
           </div>
         </div>
-        <div>
-          <div class="stars-row">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p style="font-size: 0.8rem; color: var(--white); margin-top: 0.25rem; text-align: right;">Based on 142 User Ratings</p>
-        </div>
-      </div>
-    </div>
+        
   </section>
 
   <div class="ticker">
     <div class="ticker-inner">
-      <span class="ticker-item">Adani Cement</span>
-      <span class="ticker-item">TMT Bars</span>
-      <span class="ticker-item">Sand & Bajri</span>
-      <span class="ticker-item">Water Tanks</span>
-      <span class="ticker-item">JCB Machines</span>
-      <span class="ticker-item">Mixer Machines</span>
-      <span class="ticker-item">Bricks & Blocks</span>
-      <span class="ticker-item">Wholesale Prices</span>
+      <span class="ticker-item">Premium Cement</span>[cite: 1]
+      <span class="ticker-item">TMT Bars</span>[cite: 1]
+      <span class="ticker-item">Sand & Bajri</span>[cite: 1]
+      <span class="ticker-item">Water Tanks</span>[cite: 1]
+      <span class="ticker-item">JCB Machines</span>[cite: 1]
+      <span class="ticker-item">Mixer Machines</span>[cite: 1]
+      <span class="ticker-item">Bricks & Blocks</span>[cite: 1]
+      <span class="ticker-item">Wholesale Prices</span>[cite: 1]
     </div>
   </div>
+</div>
 
+<!-- LAYER 2: ABOUT US LAYER -->
+<div id="layer-about-view" class="page-layer">
   <section id="about">
     <div class="section-inner">
       <div class="about-grid">
         <div>
           <div class="about-badge">
-            <div class="about-badge-num">30+</div>
-            <div class="about-badge-label">Years of Undefeated Trust</div>
+            <div class="about-badge-num">30+</div>[cite: 1]
+            <div class="about-badge-label">Years of Undefeated Trust</div>[cite: 1]
           </div>
         </div>
         <div>
-          <div class="section-tag">Our Story</div>
-          <h2 class="section-title">A Legacy of <em>Trust</em> in Udhampur</h2>
-          <p class="section-desc">Since our founding, Sharma Cement & Hardware Store has been the go-to partner for builders, contractors, and homeowners across Udhampur, Jammu & Kashmir. As an authorized government contractor and general order supplier, we deliver only certified, premium-grade construction materials directly to your site.</p>
+          <div class="section-tag">Our Story</div>[cite: 1]
+          <h2 class="section-title">A Legacy of <em>Trust</em> in Udhampur</h2>[cite: 1]
+          <p class="section-desc">Since our founding, Sharma Cement & Hardware Store has been the go-to partner for builders, contractors, and homeowners across Udhampur, Jammu & Kashmir. We provide certified, premium-grade construction materials directly to your site.</p>[cite: 1]
           <div class="about-features">
             <div class="about-feature">
-              <div class="about-feature-title">Wholesale Pricing</div>
-              <div class="about-feature-desc">Direct-from-mill bulk rates for large orders and contractor budgets.</div>
+              <div class="about-feature-title">Wholesale Pricing</div>[cite: 1]
+              <div class="about-feature-desc">Direct-from-mill bulk rates for large orders and contractor budgets.</div>[cite: 1]
             </div>
             <div class="about-feature">
-              <div class="about-feature-title">Certified Quality</div>
-              <div class="about-feature-desc">Professional certifications across all structural inventory products.</div>
+              <div class="about-feature-title">Certified Quality</div>[cite: 1]
+              <div class="about-feature-desc">Professional certifications across all structural inventory products.</div>[cite: 1]
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="brands-strip">
+    <div class="brands-inner">
+      <div class="brands-label">Materials We Stock</div>[cite: 1]
+      <div class="brand-pill">Premium Cement</div>[cite: 1]
+      <div class="brand-pill">TMT Steel</div>[cite: 1]
+      <div class="brand-pill">Water Tanks</div>[cite: 1]
+      <div class="brand-pill">Mixer Machines</div>[cite: 1]
+      <div class="brand-pill">JCB Excavator</div>[cite: 1]
+      <div class="brand-pill">Sand/Bajri/Stone</div>[cite: 1]
+    </div>
+  </div>
 </div>
 
-<!-- LAYER 2: CEMENT PORTFOLIO LAYER -->
-<div id="layer-cement-view" class="page-layer">
+<!-- LAYER 3: MATERIALS LAYER -->
+<div id="layer-materials-view" class="page-layer">
   <section id="materials">
     <div class="section-inner">
-      <div class="section-tag">Premium Inventory</div>
-      <h2 class="section-title">Adani & <em>Ambuja Kawach</em> Range</h2>
-      <p class="section-desc">Formulated with advanced moisture barrier tech to defend elements from structural water ingress lines. Mazbooti jo paani ko bhi roke.</p>
+      <div class="section-tag">What We Offer</div>[cite: 1]
+      <h2 class="section-title">All Construction Materials</em></h2>[cite: 1]
+      <p class="section-desc">Everything you need for a strong, durable structure — sourced directly, stocked in bulk, and available at wholesale prices.</p>[cite: 1]
       
       <div class="materials-grid">
+        <!-- Cement Portfolio Card -->
         <div class="material-card">
           <div>
-            <h3>Ambuja Kawach Premium Bags</h3>
-            <p>High structural integrity and compound strength optimized explicitly to counter early-stage foundational humidity factors.</p>
+            <h3>Premium Cement Stock</h3>[cite: 1]
+            <p>Authorized stock of high-strength, water-resistant Cement — optimized for strong foundations and structural layouts.</p>[cite: 1]
           </div>
           <div>
-            <div class="card-image-gallery single-img">
-              <img src="cement.jpeg" alt="Premium Cement Bags Portfolio Layout">
+            <div class="card-image-gallery">
+              <img src="cement.jpeg" alt="Premium Cement Inventory Stock - View 1">
+              <img src="cement2.jpeg" alt="Premium Cement Inventory Stock - View 2">
+              <img src="cement3.jpeg" alt="Premium Cement Inventory Stock - View 3">
             </div>
-            <span class="material-tag">Authorized Depot</span>
+            <span class="material-tag">Wholesale Available</span>[cite: 1]
           </div>
         </div>
 
+        <!-- TMT Bars Card -->
         <div class="material-card">
           <div>
-            <h3>Foundational Casting Slabs</h3>
-            <p>Heavy volume premium grade structural layout applications across custom building contexts.</p>
+            <h3>TMT Bars & Steel</h3>[cite: 1]
+            <p>Premium grade TMT reinforcement bars for concrete structures, columns, slabs, and heavy-duty civil engineering projects across the region.</p>[cite: 1]
           </div>
           <div>
-            <div class="card-image-gallery single-img">
-              <img src="cement2.jpeg" alt="Foundational Base Layout Matrix">
+            <div class="card-image-gallery">
+              <img src="TMT.jpeg" alt="TMT Bars View 1">
+              <img src="TMT2.jpeg" alt="TMT Bars View 2">
             </div>
-            <span class="material-tag">High Binding Formula</span>
+            <span class="material-tag">All Sizes</span>[cite: 1]
           </div>
         </div>
 
+        <!-- JCB Machinery Card -->
         <div class="material-card">
           <div>
-            <h3>High Shear Mortar Cohesion</h3>
-            <p>Flawless chemical adherence design maps for structural brick masonry alignment layouts.</p>
+            <h3>JCB Excavator & Logistics</h3>[cite: 1]
+            <p>Heavy-duty excavation units, commercial fleet support, trench diggers, and planetary mixers ready for deployment across multi-scale contract jobs.</p>[cite: 1]
           </div>
           <div>
-            <div class="card-image-gallery single-img">
-              <img src="cement3.jpeg" alt="Brick Mortar Integration Showcase">
+            <div class="card-image-gallery">
+              <img src="JCB.jpeg" alt="JCB Machinery Fleet Asset">
+              <img src="JCB2.jpeg" alt="Heavy Commercial Support Gear">
             </div>
-            <span class="material-tag">Direct Bulk Supply</span>
+            <span class="material-tag">On-Site Hire</span>[cite: 1]
           </div>
         </div>
       </div>
@@ -496,85 +500,63 @@
   </section>
 </div>
 
-<!-- LAYER 3: TMT STEEL SECTION LAYER -->
-<div id="layer-tmt-view" class="page-layer">
-  <section id="materials">
+<!-- LAYER 4: FIND US LAYER -->
+<div id="layer-find-view" class="page-layer">
+  <section id="contact">
     <div class="section-inner">
-      <div class="section-tag">Structural Grade Steel</div>
-      <h2 class="section-title">High Tensile <em>TMT Reinforcements</em></h2>
-      <p class="section-desc">Certified industrial structural bars engineered to maximize core load distributions uniformly.</p>
-      
-      <div class="materials-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
-        <div class="material-card">
-          <div>
-            <h3>Fe-550D Ribbed Reinforcement Bars</h3>
-            <p>Premium grade structural TMT reinforcement profiles built to provide uniform binding indices to continuous concrete columns.</p>
-          </div>
-          <div>
-            <div class="card-image-gallery single-img">
-              <img src="TMT.jpeg" alt="High-Definition TMT Structural Bars Layout">
+      <div class="section-tag">Get In Touch</div>[cite: 1]
+      <h2 class="section-title">Visit or <em>Call Us</em></h2>[cite: 1]
+      <p class="section-desc">We're open 7 days a week. Drop by for wholesale rates, bulk orders, or expert advice on your construction project.</p>[cite: 1]
+      <div class="contact-grid">
+        <div>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="contact-item-title">Location</div>[cite: 1]
+                <div class="contact-item-val">Near JK Bank Main Market Kambal Danga Udhampur, J&K — 182121</div>[cite: 1]
+              </div>
             </div>
-            <span class="material-tag">All Sizing Available</span>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>[cite: 1]
+              <div>
+                <div class="contact-item-title">Phone Numbers</div>[cite: 1]
+                <div class="contact-item-val">
+                  <a href="tel:9622128720">96221-28720</a><br>[cite: 1]
+                  <a href="tel:6005331055">60053-31055</a><br>[cite:1]
+                  <a href="tel:9797560287">97975-60287</a><br>[cite: 1]
+                  <a href="tel:9419175521">94191-75521</a>[cite: 1]
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>[cite: 1]
+              <div>
+                <div class="contact-item-title">Email</div>[cite: 1]
+                <div class="contact-item-val"><a href="Emailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>[cite: 1]
+              </div>
+            </div>
+          </div>
+          <div class="contact-hours">
+            <div class="contact-hours-title">Business Hours</div>[cite: 1]
+            <div class="contact-hours-val">Monday – Sunday</div>[cite: 1]
+            <div class="contact-hours-sub">8:00 AM – 7:00 PM  |  Open All Days</div>[cite: 1]
           </div>
         </div>
-
-        <div class="material-card">
-          <div>
-            <h3>Bulk Commercial Steel Logistics</h3>
-            <p>Immediate industrial site fulfillment systems directly sourced from specialized wholesale yard distribution stores.</p>
-          </div>
-          <div>
-            <div class="card-image-gallery single-img">
-              <img src="TMT2.jpeg" alt="Wholesale Steel Distribution Yard Yards Stock">
-            </div>
-            <span class="material-tag">Contractor Wholesale Rates</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- LAYER 4: JCB LOGISTICS & MACHINERY LAYER -->
-<div id="layer-jcb-view" class="page-layer">
-  <section id="materials">
-    <div class="section-inner">
-      <div class="section-tag">Heavy Equipment Fleet Support</div>
-      <h2 class="section-title">JCB Excavator &amp; <em>Machinery Support</em></h2>
-      <p class="section-desc">Heavy-duty deployment excavation systems ready on call to optimize dynamic field leveling tasks safely.</p>
-      
-      <div class="materials-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
-        <div class="material-card">
-          <div>
-            <h3>JCB Backhoe Loaders</h3>
-            <p>Heavy machinery configured perfectly for complex industrial infrastructure shifting, trench diggers, and deep excavation maneuvers.</p>
-          </div>
-          <div>
-            <div class="card-image-gallery single-img">
-              <img src="JCB.jpeg" alt="Heavy JCB Backhoe Equipment Fleet Deployment Unit">
-            </div>
-            <span class="material-tag">On-Site Contract Booking</span>
-          </div>
-        </div>
-
-        <div class="material-card">
-          <div>
-            <h3>All-Terrain Construction Machinery</h3>
-            <p>Highly maintained site deployment assets setup dynamically for heavy multi-scale commercial contract loads.</p>
-          </div>
-          <div>
-            <div class="card-image-gallery single-img">
-              <img src="JCB2.jpeg" alt="Field Excavator Fleet Vehicle Asset View">
-            </div>
-            <span class="material-tag">On-Call Operation Staff</span>
-          </div>
+        <div class="map-wrap">
+          <div class="map-label"><i class="fa-solid fa-map-location-dot"></i> Find Us on Google Maps[cite: 1]</div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.7347947036483!2d75.03814860889008!3d32.947732273482586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780498350633!5m2!1sen!2sin"[cite: 1]
+            allowfullscreen loading="lazy"
+            title="Sharma Cement & Hardware Store Location">[cite: 1]
+          </iframe>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- LAYER 5: INTERACTIVE CUSTOMER FEEDBACK PORTAL -->
+<!-- LAYER 5: FEEDBACK LAYER -->
 <div id="layer-feedback-view" class="page-layer">
   <section id="feedback">
     <div class="section-inner">
@@ -605,108 +587,51 @@
           <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Submit Review Details</button>
         </form>
         <div class="success-alert" id="feedbackSuccess">
-          <i class="fa-solid fa-circle-check"></i> Thank you! Your verified business review has been saved locally.
+          <i class="fa-solid fa-circle-check"></i> Thank you! Your verified business review has been saved.
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- GLOBAL PERMANENT CONTACT SECTION -->
-<section id="contact">
-  <div class="section-inner">
-    <div class="section-tag">Get In Touch</div>
-    <h2 class="section-title">Visit or <em>Call Us</em></h2>
-    <p class="section-desc">We're open 7 days a week. Drop by for wholesale rates, bulk orders, or expert advice on your construction project.</p>
-    <div class="contact-grid">
-      <div>
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-            <div>
-              <div class="contact-item-title">Location</div>
-              <div class="contact-item-val">Near JK Bank, Kambal Danga,<br>Udhampur, J&K — 182121</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <div>
-              <div class="contact-item-title">Phone Numbers</div>
-              <div class="contact-item-val">
-                <a href="tel:9622128720">96221-28720</a><br>
-                <a href="tel:9797560287">97975-60287</a><br>
-                <a href="tel:9419175521">94191-75521</a>
-              </div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">✉️</div>
-            <div>
-              <div class="contact-item-title">Email</div>
-              <div class="contact-item-val"><a href="mailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="contact-hours">
-          <div class="contact-hours-title">Business Hours</div>
-          <div class="contact-hours-val">Monday – Sunday</div>
-          <div class="contact-hours-sub">8:00 AM – 7:00 PM  |  Open All Days</div>
-        </div>
-      </div>
-      <div class="map-wrap">
-        <div class="map-label"><i class="fa-solid fa-map-location-dot"></i> Find Us on Google Maps</div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.7347947036483!2d75.03814860889008!3d32.947732273482586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780498350633!5m2!1sen!2sin"
-          allowfullscreen loading="lazy"
-          title="Sharma Cement & Hardware Store Location">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- GLOBAL FOOTER -->
 <footer>
-  <div class="footer-logo">SHARMA CEMENT & HARDWARE STORE</div>
-  <div class="footer-sub">Near JK Bank, Kambal Danga, Udhampur, J&K  |  Est. 30+ Years</div>
-  <div class="footer-copy">© 2026 Sharma Cement & Hardware Store. GST No: 01AFFPC7320H1Z5  ·  All Rights Reserved.</div>
+  <div class="footer-logo">SHARMA CEMENT & HARDWARE STORE</div>[cite: 1]
+  <div class="footer-sub">Near JK Bank, Kambal Danga, Udhampur, J&K  |  Est. 30+ Years</div>[cite: 1]
+  <div class="footer-copy">© 2026 Sharma Cement & Hardware Store. All Rights Reserved.</div>[cite: 1]
 </footer>
 
-<a class="whatsapp-fab" href="https://api.whatsapp.com/send?phone=919622128720" title="Chat on WhatsApp" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
+<!-- WHATSAPP FAB -->
+<a class="whatsapp-fab" href="https://api.whatsapp.com/send?phone=919622128720" title="Chat on WhatsApp" target="_blank" rel="noopener">[cite: 1]
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">[cite: 1]
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>[cite: 1]
+  </svg>[cite: 1]
+</a>[cite: 1]
 
-<!-- MULTI-LAYER & CAROUSEL NAVIGATION ENGINE -->
+<!-- CAROUSEL NAVIGATION ENGINE -->
 <script>
-  // High performance single-page layout system for GitHub Pages compatibility
+  // High performance layer routing logic
   function openLayer(layerTargetId) {
-    // Intercept all system layers
     const domesticLayers = document.querySelectorAll('.page-layer');
     domesticLayers.forEach(layer => {
       layer.classList.remove('active-layer');
     });
 
-    // Remove status highlighting across all interface nav items
     const interfaceTabs = document.querySelectorAll('.tab-btn');
     interfaceTabs.forEach(tab => {
       tab.classList.remove('active-tab');
     });
 
-    // Make current target active
     document.getElementById('layer-' + layerTargetId).classList.add('active-layer');
 
-    // Retain menu highlights across functional navigation
     if (event && event.currentTarget) {
       event.currentTarget.classList.add('active-tab');
     }
 
-    // Smooth return transition to the top section boundary
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Hero Background Carousel Animation Sequence (background1.jpeg, background2.jpeg, background3.jpeg)
+  // Hero Background Carousel Animation
   let structuralIndex = 0;
   const layoutSlides = document.querySelectorAll('.hero-slide');
 
@@ -718,13 +643,11 @@
     if (structuralIndex > layoutSlides.length) { structuralIndex = 1; }
     layoutSlides[structuralIndex - 1].classList.add('active-slide');
     
-    setTimeout(cycleBackgrounds, 5000); // Transitions smoothly every 5 seconds
+    setTimeout(cycleBackgrounds, 5000);
   }
-  
-  // Initialize slider safely
   setTimeout(cycleBackgrounds, 5000);
 
-  // Client Side Feedback Handler
+  // Form submission handler
   function processClientForm(event) {
     event.preventDefault();
     document.getElementById('submissionSystem').reset();
