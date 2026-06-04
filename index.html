@@ -32,6 +32,22 @@
     display: flex; align-items: center; justify-content: space-between;
     height: 64px;
   }
+  
+  /* FIXED: Added logo flex styling containers */
+  .nav-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .brand-logo-img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    flex-shrink: 0;
+  }
+
   .nav-logo {
     font-family: 'Oswald', sans-serif;
     font-size: 1.15rem; font-weight: 700;
@@ -238,9 +254,12 @@
       gap: 1.25rem !important;
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
+    
+    /* FIXED: Tied toggle activation back into active layout viewport state */
     .nav-links.mobile-open {
-      display: flex;
+      display: flex !important;
     }
+    
     .nav-links li {
       width: 100%;
       text-align: center;
@@ -257,9 +276,13 @@
 <body>
 
 <nav>
-  <div class="nav-logo">
-    SHARMA CEMENT & HARDWARE STORE
-    <span>Near JK Bank Kambal Danga Udhampur</span>
+  <!-- FIXED: Embedded logo image referencing LOGO.jpeg_2.png smoothly -->
+  <div class="nav-logo-container">
+    <img src="LOGO.jpeg_2.png" alt="Sharma Cement & Hardware Store Logo" class="brand-logo-img">
+    <div class="nav-logo">
+      SHARMA CEMENT & HARDWARE STORE
+      <span>Near JK Bank Kambal Danga Udhampur</span>
+    </div>
   </div>
   
   <div class="hamburger" id="mobileMenuBtn" onclick="toggleMobileMenu()">
@@ -283,7 +306,7 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow"></div>
+      <div class="hero-eyebrow">Udhampur, Jammu & Kashmir</div>
       <h1>
         Built on <em>Trust.</em><br>
         Backed by <em>Strength.</em>
@@ -360,7 +383,7 @@
 
   <div class="brands-strip">
     <div class="brands-inner">
-      <div class="brands-label">Materials We Stock</div>
+      <div class="brands-label">Brands We Stock</div>
       <div class="brand-pill">Premium Cement</div>
       <div class="brand-pill">TMT Steel</div>
       <div class="brand-pill">Water Tanks</div>
@@ -375,7 +398,7 @@
 <div id="layer-materials-view" class="page-layer">
   <section id="materials">
     <div class="section-inner">
-      <div class="section-tag">What We Offer</div>
+      <div class="section-tag">Materials We Offer</div>
       <h2 class="section-title">All Construction <em>Materials</em></h2>
       <p class="section-desc">Everything you need for a strong, durable structure — sourced directly, stocked in bulk, and available at wholesale prices.</p>
       <div class="materials-grid">
@@ -469,7 +492,7 @@
               <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
               <div>
                 <div class="contact-item-title">Location</div>
-                <div class="contact-item-val">Near JK Bank Main Market Kambal Danga<br>Udhampur, J&K — 182121</div>
+                <div class="contact-item-val">Near JK Bank Kambal Danga<br>Udhampur, J&K — 182121</div>
               </div>
             </div>
             <div class="contact-item">
@@ -478,7 +501,7 @@
                 <div class="contact-item-title">Phone Numbers</div>
                 <div class="contact-item-val">
                   <a href="tel:9622128720">96221-28720</a><br>
-                  <a href="tel:6005331055">60053-31055</a><br>
+                  <a href="tel:"6005331055">60053-31055</a><br>  
                   <a href="tel:9797560287">97975-60287</a><br>
                   <a href="tel:9419175521">94191-75521</a><br>
                 </div>
@@ -488,7 +511,7 @@
               <div class="contact-icon">✉️</div>
               <div>
                 <div class="contact-item-title">Email</div>
-                <div class="contact-item-val"><a href="mailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>
+                <div class="contact-item-val"><a href="Emailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>
               </div>
             </div>
           </div>
@@ -551,7 +574,7 @@
 <!-- COMPONENT LAYER: SITE CONTEXTUAL FOOTER -->
 <footer>
   <div class="footer-logo">SHARMA CEMENT & HARDWARE STORE</div>
-  <div class="footer-sub">Near JK Bank, Kambal Danga, Udhampur, J&K  |  Est. 30+ Years</div>
+  <div class="footer-sub">Near JK Bank Main Market Kambal Danga Udhampur, J&K  |  Est. 30+ Years</div>
   <div class="footer-copy">© 2026 Sharma Cement & Hardware Store. All Rights Reserved.</div>
 </footer>
 
