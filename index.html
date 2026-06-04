@@ -6,6 +6,7 @@
 <title>Sharma Cement & Hardware Store | Udhampur, J&K</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- Font Awesome icon set for interface stars and checkmarks -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root {
@@ -53,20 +54,19 @@
   }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s ease; }
 
-  /* MULTI-LAYER ROUTING SECTIONS */
+  /* HIGH-PERFORMANCE MULTI-LAYER ROUTING */
   .page-layer {
     display: none;
-    animation: layerTransition 0.4s ease-in-out forwards;
+    opacity: 0;
+    will-change: opacity, transform;
+    transition: opacity 0.3s ease-in-out;
   }
   .page-layer.active-layer {
     display: block;
-  }
-  @keyframes layerTransition {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+    opacity: 1;
   }
 
-  /* HERO AREA */
+  /* HERO AREA & GPU OPTIMIZATION */
   .hero {
     min-height: 100vh;
     position: relative;
@@ -77,7 +77,10 @@
     position: absolute; inset: 0;
     background-size: cover; background-position: center;
     filter: brightness(0.35);
-    animation: backgroundSlider 15s infinite ease-in-out;
+    /* hardware acceleration to prevent browser stutter */
+    transform: translateZ(0); 
+    will-change: background-image;
+    animation: backgroundSlider 20s infinite ease-in-out;
   }
   @keyframes backgroundSlider {
     0%, 100% { background-image: url('background1.jpeg'); }
@@ -114,12 +117,17 @@
   .hero-stat-num { font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: var(--gold); font-weight: 700; }
   .hero-stat-label { font-size: 0.8rem; color: var(--cement); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 0.15rem; }
 
-  /* TICKER RUNWAY */
+  /* TICKER RUNWAY (GPU OPTIMIZED) */
   .ticker { background: var(--gold); color: var(--navy); padding: 0.6rem 0; overflow: hidden; }
-  .ticker-inner { display: flex; gap: 3rem; white-space: nowrap; animation: scroll-left 25s linear infinite; }
+  .ticker-inner { 
+    display: flex; gap: 3rem; white-space: nowrap; 
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    animation: scroll-left 25s linear infinite; 
+  }
   .ticker-item { font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
   .ticker-item::before { content: '◆ '; }
-  @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes scroll-left { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
 
   /* STRUCTURAL SECTIONS */
   section { padding: 5rem 2rem; }
@@ -217,8 +225,6 @@
     .hamburger { 
       display: flex; 
     }
-    
-    /* Transforms nav menu links list into a sliding dropdown panel */
     .nav-links { 
       display: none; 
       flex-direction: column;
@@ -232,23 +238,18 @@
       gap: 1.25rem !important;
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
-
-    /* Activates visibility whenever the drawer menu has the open modifier */
     .nav-links.mobile-open {
       display: flex;
     }
-
     .nav-links li {
       width: 100%;
       text-align: center;
     }
-
     .nav-links a {
       display: block;
       padding: 0.5rem 0;
       font-size: 1rem;
     }
-
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>
@@ -276,12 +277,13 @@
   </ul>
 </nav>
 
+<!-- CONTAINER 1: LANDING HOME VIEW PORTAL PANEL -->
 <div id="layer-home-view" class="page-layer active-layer">
   <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-     
+      <div class="hero-eyebrow">Udhampur, Jammu & Kashmir</div>
       <h1>
         Built on <em>Trust.</em><br>
         Backed by <em>Strength.</em>
@@ -322,6 +324,7 @@
   </div>
 </div>
 
+<!-- CONTAINER 2: STORY ABOUT DETAILS ROUTING LAYOUT VIEW -->
 <div id="layer-about-view" class="page-layer">
   <section id="about">
     <div class="section-inner">
@@ -368,6 +371,7 @@
   </div>
 </div>
 
+<!-- CONTAINER 3: MATERIALS INVENTORY STOCK PRODUCT INDEX GRID PANEL -->
 <div id="layer-materials-view" class="page-layer">
   <section id="materials">
     <div class="section-inner">
@@ -451,6 +455,7 @@
   </section>
 </div>
 
+<!-- CONTAINER 4: GEOLOCATION ROUTING MAP INFO AND SCHEMATICS PANEL -->
 <div id="layer-find-view" class="page-layer">
   <section id="contact">
     <div class="section-inner">
@@ -505,6 +510,7 @@
   </section>
 </div>
 
+<!-- CONTAINER 5: HIGH-PERFORMANCE CUSTOM CLIENT REVIEW CAPTURE SUBMISSION SYSTEM PANEL -->
 <div id="layer-feedback-view" class="page-layer">
   <section id="feedback">
     <div class="section-inner">
@@ -541,80 +547,67 @@
   </section>
 </div>
 
+<!-- COMPONENT LAYER: SITE CONTEXTUAL FOOTER -->
 <footer>
   <div class="footer-logo">SHARMA CEMENT & HARDWARE STORE</div>
   <div class="footer-sub">Near JK Bank, Kambal Danga, Udhampur, J&K  |  Est. 30+ Years</div>
   <div class="footer-copy">© 2026 Sharma Cement & Hardware Store. GST No: 01AFFPC7320H1Z5  ·  All Rights Reserved.</div>
 </footer>
 
+<!-- SYSTEM LEVEL: COMPONENT FLOATING TRANSIT TRIGGER LINK (WHATSAPP) -->
 <a class="whatsapp-fab" href="https://api.whatsapp.com/send?phone=919622128720" title="Chat on WhatsApp" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
 
+<!-- OPTIMIZED ROUTING ROUTINES -->
 <script>
-  // Mobile navigation overlay display toggler
   function toggleMobileMenu() {
-    const listWrapper = document.getElementById('navLinksContainer');
-    listWrapper.classList.toggle('mobile-open');
+    document.getElementById('navLinksContainer').classList.toggle('mobile-open');
   }
 
-  // Intercepts navigation clicks and automatically closes mobile drawer container
   function handleNavClick(layerTargetId) {
-    // Invoke main structural view shifting routine
     openLayer(layerTargetId);
-    
-    // Shut down open side/dropdown layers instantly for fluid mobile UX
-    const listWrapper = document.getElementById('navLinksContainer');
-    listWrapper.classList.remove('mobile-open');
+    document.getElementById('navLinksContainer').classList.remove('mobile-open');
   }
 
-  // App structure layer switcher framework routing logic
   function openLayer(layerTargetId) {
-    // Hide all sibling workspace nodes
     const architecturalLayers = document.querySelectorAll('.page-layer');
     architecturalLayers.forEach(layer => {
       layer.classList.remove('active-layer');
     });
 
-    // Reset layout header tracking states
     const globalTabElements = document.querySelectorAll('.tab-btn');
     globalTabElements.forEach(tab => {
       tab.classList.remove('active-tab');
     });
 
-    // Bring targeted views context into primary display field
-    document.getElementById('layer-' + layerTargetId).classList.add('active-layer');
+    const target = document.getElementById('layer-' + layerTargetId);
+    if(target) {
+      target.classList.add('active-layer');
+    }
 
-    // Reapply color adjustments across active links list elements
-    if (window.event && window.event.currentTarget) {
+    if (window.event && window.event.currentTarget && window.event.currentTarget.classList.contains('tab-btn')) {
       window.event.currentTarget.classList.add('active-tab');
     } else {
-      // Internal scan layout mapping check if clicked action fires programmatically
       const tabs = document.querySelectorAll('.tab-btn');
       tabs.forEach(t => {
-        if(t.getAttribute('onclick').includes(layerTargetId)) {
+        if(t.getAttribute('onclick') && t.getAttribute('onclick').includes(layerTargetId)) {
           t.classList.add('active-tab');
         }
       });
     }
 
-    // View alignment positioning focus reset
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' }); // Instant window reset prevents lag spikes
   }
 
-  // Customer Feedback submission controller 
   function processClientForm(event) {
     event.preventDefault();
     document.getElementById('submissionSystem').reset();
-    
     const executionNotice = document.getElementById('feedbackSuccess');
     executionNotice.style.display = 'block';
-    
-    setTimeout(() => {
-      executionNotice.style.display = 'none';
-    }, 4500);
+    setTimeout(() => { executionNotice.style.display = 'none'; }, 4500);
   }
 </script>
 </body>
