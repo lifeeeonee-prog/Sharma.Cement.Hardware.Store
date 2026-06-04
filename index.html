@@ -8,14 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gold: #D4A017;
-    --gold-light: #F0C040;
-    --navy: #0D1B2A;
-    --navy-mid: #1A2E44;
+    --white: #D4A017;
+    --white: #F0C040;
+    --white: #0D1B2A;
+    --white: #1A2E44;
     --white: #FFFFFF;
-    --off-white: #F5F0E8;
+    --white: #F5F0E8;
     --cement: #B8A898;
-    --accent: #25D366; /* Shifted to brand WhatsApp green */
+    --accent: #E8521A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -46,7 +46,7 @@
     font-family: 'Oswald', sans-serif; font-size: 0.9rem; letter-spacing: 1px;
     font-weight: 600; transition: background 0.2s;
   }
-  .nav-cta:hover { background: #1ebd57; }
+  .nav-cta:hover { background: #c44010; }
   .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); }
 
@@ -183,13 +183,6 @@
     background: var(--gold);
   }
   .material-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-  .material-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    margin-bottom: 1.25rem;
-    border: 1px solid rgba(212,160,23,0.15);
-  }
   .material-icon {
     width: 48px; height: 48px;
     background: rgba(212,160,23,0.15);
@@ -286,16 +279,14 @@
 
 <nav>
   <div class="nav-logo">
-    SHARMA CEMENT
-    <span>& HARDWARE STORE</span>
+    SHARMA CEMENT & HARDWARE STORE</span>
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#materials">Materials</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
-  </ul>
-  
+ 
   </div>
 </nav>
 
@@ -332,23 +323,24 @@
 
 <div class="ticker">
   <div class="ticker-inner" id="tickerInner">
-    <span class="ticker-item">Premium Cement Stock</span>
+    <span class="ticker-item">Premium Cement</span>
     <span class="ticker-item">TMT Bars</span>
-    <span class="ticker-item">Sand &amp; Bajri</span>
+    <span class="ticker-item">Sand & Bajri</span>
     <span class="ticker-item">Water Tanks</span>
     <span class="ticker-item">JCB Machines</span>
     <span class="ticker-item">Mixer Machines</span>
-    <span class="ticker-item">Bricks &amp; Blocks</span>
-    <span class="ticker-item">Wholesale Prices</span>
-    <span class="ticker-item">Premium Cement Stock</span>
-    <span class="ticker-item">TMT Bars</span>
-    <span class="ticker-item">Sand &amp; Bajri</span>
-    <span class="ticker-item">Water Tanks</span>
-    <span class="ticker-item">JCB Machines</span>
-    <span class="ticker-item">Mixer Machines</span>
-    <span class="ticker-item">Bricks &amp; Blocks</span>
+    <span class="ticker-item">Bricks & Blocks</span>
     <span class="ticker-item">Wholesale Prices</span>
     
+    <span class="ticker-item">Premium Cement</span>
+    <span class="ticker-item">TMT Bars</span>
+    <span class="ticker-item">Sand & Bajri</span>
+    <span class="ticker-item">Water Tanks</span>
+    <span class="ticker-item">JCB Machines</span>
+    <span class="ticker-item">Mixer Machines</span>
+    <span class="ticker-item">Bricks & Blocks</span>
+    <span class="ticker-item">Wholesale Prices</span>
+   
   </div>
 </div>
 
@@ -356,7 +348,7 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-img-wrap">
-        <img src="" id="aboutImg" alt="Sharma Cement & Hardware Store — Our Shop">
+        <img src="" id="aboutImg" alt="Sharma Cement & Hardware Store">
         <div class="about-badge">
           <div class="about-badge-num">30+</div>
           <div class="about-badge-label">Years in Business</div>
@@ -373,16 +365,11 @@
           </div>
           <div class="about-feature">
             <div class="about-feature-title">Certified Quality</div>
-            <div class="about-feature-desc">Authorized distributor of top-tier brands and Adani Cement.</div>
-          </div>
           <div class="about-feature">
             <div class="about-feature-title">On-Site Logistics</div>
             <div class="about-feature-desc">Heavy equipment fleets including JCB and transit mixers on call.</div>
           </div>
           <div class="about-feature">
-            <div class="about-feature-title">Reliable Support</div>
-            <div class="about-feature-desc">Dedicated enterprise order verification and clear tracking options.</div>
-          </div>
         </div>
       </div>
     </div>
@@ -391,12 +378,13 @@
 
 <div class="brands-strip">
   <div class="brands-inner">
-    <div class="brands-label">Brands We Stock</div>
-    <div class="brand-pill featured">Cement</div>
+  
+   
+    <div class="brand-pill featured">Premium Cement</div>
     <div class="brand-pill">TMT Steel</div>
     <div class="brand-pill">Water Tanks</div>
     <div class="brand-pill">Mixer Machines</div>
-    <div class="brand-pill">Excavator </div>
+    <div class="brand-pill">JCB Equipment</div>
   </div>
 </div>
 
@@ -407,13 +395,13 @@
     <p class="section-desc">Everything you need for a strong, durable structure — sourced directly, stocked in bulk, and available at wholesale prices.</p>
     <div class="materials-grid">
       <div class="material-card">
-        <img src="cement2-item.jpg" alt="Premium Cement Stock" class="material-image">
+        <div class="material-icon"></div>
         <h3>Premium Cement Stock</h3>
-        <p>Authorized stock of high-strength, water-resistant cement — optimized for structural layouts and robust foundations.</p>
+        <p>Authorized stock of high-strength, water-resistant Ambuja Kawach and Adani Cement — optimized for strong foundations and structural layouts. Mazbooti jo paani ko bhi roke.</p>
         <span class="material-tag">Wholesale Available</span>
       </div>
       <div class="material-card">
-        <img src="cement4-item.jpg" alt="TMT Bars & Steel" class="material-image">
+        <div class="material-icon"></div>
         <h3>TMT Bars & Steel</h3>
         <p>Premium grade TMT reinforcement bars for concrete structures, columns, slabs, and heavy-duty civil engineering projects across the region.</p>
         <span class="material-tag">All Sizes</span>
@@ -476,7 +464,7 @@
             <div class="contact-icon"></div>
             <div>
               <div class="contact-item-title">Location</div>
-              <div class="contact-item-val">Near JK Bank, Kambal Danga,<br>Udhampur, J&K — 182121</div>
+              <div class="contact-item-val">Near JK Bank Main Market Kambal Danga,<br>Udhampur, J&K — 182121</div>
             </div>
           </div>
           <div class="contact-item">
@@ -494,21 +482,15 @@
             <div class="contact-icon">✉️</div>
             <div>
               <div class="contact-item-title">Email</div>
-              <div class="contact-item-val"><a href="mailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>
+              <div class="contact-item-val"><a href="Emailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon"></div>
-            <div>
-              <div class="contact-item-title">WhatsApp</div>
-              <div class="contact-item-val"><a href="https://api.whatsapp.com/send?phone=919622128720">Chat on WhatsApp →</a></div>
-            </div>
-          </div>
         </div>
         <div class="contact-hours">
           <div class="contact-hours-title">Business Hours</div>
           <div class="contact-hours-val">Monday – Sunday</div>
-          <div class="contact-hours-sub">8:00 AM – 7:00 PM &nbsp;|&nbsp; Open All Days</div>
+          <div class="contact-hours-sub">8:00 AM – 7:00 PM  |  Open All Days</div>
         </div>
       </div>
       <div class="map-wrap">
@@ -525,8 +507,8 @@
 
 <footer>
   <div class="footer-logo">SHARMA CEMENT & HARDWARE STORE</div>
-  <div class="footer-sub">Near JK Bank  Main Market Kambal Danga  Udhampur, J&K &nbsp;|&nbsp; Est. 30+ Years</div>
-  <div class="footer-copy">© 2026 Sharma Cement & Hardware Store. All Rights Reserved.</div>
+  <div class="footer-sub">Near JK Bank, Kambal Danga, Udhampur, J&K  |  Est. 30+ Years</div>
+  <div class="footer-copy">© 2026 Sharma Cement & Hardware Store. GST No: 01AFFPC7320H1Z5  ·  All Rights Reserved.</div>
 </footer>
 
 <a class="whatsapp-fab" href="https://api.whatsapp.com/send?phone=919622128720" title="Chat on WhatsApp" target="_blank" rel="noopener">
@@ -534,6 +516,16 @@
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
+
+<script>
+(function(){
+  var img1 = "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";
+  document.getElementById("heroBg").style.backgroundImage = "url('data:image/jpeg;base64," + img1 + "')";
+  document.getElementById("aboutImg").style.backgroundImage = "url('data:image/jpeg;base64," + img1 + "')";
+  document.getElementById("galleryImg1").src = "data:image/jpeg;base64," + img1;
+  document.getElementById("galleryImg2").src = "data:image/jpeg;base64," + img1;
+})();
+</script>
 
 </body>
 </html>
