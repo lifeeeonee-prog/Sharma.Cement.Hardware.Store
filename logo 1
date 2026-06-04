@@ -1,0 +1,68 @@
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+.wrap{display:flex;justify-content:center;align-items:center;padding:16px;background:#0a0a0f;}
+.logo-outer{width:580px;height:580px;border-radius:50%;background:conic-gradient(from 0deg,#f7e07a 0%,#a06000 20%,#f0c84a 40%,#7a4800 60%,#f7e07a 80%,#a06000 100%);padding:9px;flex-shrink:0;}
+.logo-mid{width:100%;height:100%;border-radius:50%;background:#0a0a0f;padding:6px;}
+.logo-inner{width:100%;height:100%;border-radius:50%;background:radial-gradient(ellipse at 40% 25%,#1e1e2e 0%,#080810 100%);border:1px solid rgba(200,144,10,0.35);overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:center;}
+.photo-band{position:absolute;bottom:0;left:0;right:0;height:172px;display:flex;border-radius:0 0 285px 285px;overflow:hidden;}
+.photo-band::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,#080810 0%,transparent 38%,rgba(0,0,0,0.55) 100%);z-index:2;pointer-events:none;}
+.photo-slot{flex:1;overflow:hidden;}
+.photo-slot img{width:100%;height:100%;object-fit:cover;filter:brightness(0.72) saturate(1.15) contrast(1.05);}
+.photo-sep{position:absolute;top:0;bottom:0;width:1.5px;background:linear-gradient(to bottom,rgba(200,144,10,0.9),rgba(200,144,10,0.05));z-index:3;}
+.sep1{left:25%;}.sep2{left:50%;}.sep3{left:75%;}
+.photo-labels{position:absolute;bottom:12px;left:0;right:0;display:flex;z-index:4;}
+.photo-labels span{flex:1;text-align:center;font-family:'Rajdhani',sans-serif;font-size:9.5px;font-weight:700;color:#f0d060;letter-spacing:1px;text-shadow:0 1px 4px #000;}
+.hex-wrap{position:absolute;top:92px;z-index:10;width:122px;height:141px;}
+.hex-outer{clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:linear-gradient(135deg,#f7e07a,#a06000,#f0c84a);width:122px;height:141px;display:flex;align-items:center;justify-content:center;}
+.hex-inner{clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:#0c0c1c;width:114px;height:132px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hex-inner img{width:86px;height:86px;object-fit:cover;}
+.deco-svg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:5;pointer-events:none;}
+.thumb{position:absolute;z-index:8;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.thumb-img{width:52px;height:52px;border-radius:8px;overflow:hidden;border:1.5px solid rgba(200,144,10,0.65);}
+.thumb-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.82);}
+.thumb-label{font-family:'Rajdhani',sans-serif;font-size:8.5px;font-weight:700;color:#c8900a;letter-spacing:1.5px;}
+.tl1{top:198px;left:16px;}.tl2{top:278px;left:16px;}
+.tr1{top:198px;right:16px;}.tr2{top:278px;right:16px;}
+.brand{font-family:'Cinzel',serif;font-size:60px;font-weight:900;background:linear-gradient(180deg,#f7e07a 0%,#d4960c 45%,#c07808 70%,#e8c040 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:8px;position:relative;z-index:10;margin-top:248px;line-height:1;}
+.rule{display:flex;align-items:center;gap:8px;z-index:10;margin-top:4px;}
+.rl{height:1px;width:46px;background:linear-gradient(to right,transparent,#c8900a);}
+.rr{height:1px;width:46px;background:linear-gradient(to left,transparent,#c8900a);}
+.rd{width:7px;height:7px;background:#c8900a;transform:rotate(45deg);}
+.sub{font-family:'Rajdhani',sans-serif;font-size:12.5px;font-weight:600;color:#c8a838;letter-spacing:3.5px;z-index:10;margin-top:2px;}
+.loc{background:#10101e;border:1.5px solid #c8900a;border-radius:20px;padding:5px 18px;margin-top:7px;z-index:10;}
+.loc span{font-family:'Rajdhani',sans-serif;font-size:11.5px;font-weight:700;color:#e8c050;letter-spacing:2px;}
+.contact{z-index:10;margin-top:7px;text-align:center;}
+.clabel{font-family:'Rajdhani',sans-serif;font-size:10px;color:#8a7030;letter-spacing:3px;}
+.cnums{font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:700;color:#f0e0a0;letter-spacing:1px;line-height:1.55;}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<div class="wrap">
+<div class="logo-outer"><div class="logo-mid"><div class="logo-inner" id="inner">
+  <div class="photo-band" id="band">
+    <div class="photo-slot"><img id="img1" src="cement_2.jpeg" alt="cement"/></div>
+    <div class="photo-slot"><img id="img2" src="TMT_2.jpeg" alt="tmt"/></div>
+    <div class="photo-slot"><img id="img3" src="JCB_2.jpeg" alt="jcb"/></div>
+    <div class="photo-slot"><img id="img4" src="cement3_2.jpeg" alt="bricks"/></div>
+    <div class="photo-sep sep1"></div><div class="photo-sep sep2"></div><div class="photo-sep sep3"></div>
+    <div class="photo-labels"><span>CEMENT</span><span>TMT BARS</span><span>JCB</span><span>CONCRETE</span></div>
+  </div>
+  <svg class="deco-svg" viewBox="0 0 560 560" fill="none">
+    <line x1="280" y1="168" x2="96" y2="118" stroke="#c8900a" stroke-width="0.8" stroke-opacity="0.35"/>
+    <line x1="280" y1="168" x2="464" y2="118" stroke="#c8900a" stroke-width="0.8" stroke-opacity="0.35"/>
+    <line x1="280" y1="240" x2="96" y2="264" stroke="#c8900a" stroke-width="0.8" stroke-opacity="0.25"/>
+    <line x1="280" y1="240" x2="464" y2="264" stroke="#c8900a" stroke-width="0.8" stroke-opacity="0.25"/>
+    <polygon points="96,118 106,125 96,132 86,125" fill="#c8900a" opacity="0.6"/>
+    <polygon points="464,118 474,125 464,132 454,125" fill="#c8900a" opacity="0.6"/>
+  </svg>
+  <div class="hex-wrap"><div class="hex-outer"><div class="hex-inner"><img id="heximg" src="cement2_2.jpeg" alt="cement bag"/></div></div></div>
+  <div class="thumb tl1"><div class="thumb-img"><img id="t1" src="cement_2.jpeg" alt="cement"/></div><div class="thumb-label">CEMENT</div></div>
+  <div class="thumb tl2"><div class="thumb-img"><img id="t2" src="TMT_2.jpeg" alt="tmt"/></div><div class="thumb-label">TMT BARS</div></div>
+  <div class="thumb tr1"><div class="thumb-img"><img id="t3" src="JCB_2.jpeg" alt="jcb"/></div><div class="thumb-label">JCB</div></div>
+  <div class="thumb tr2"><div class="thumb-img"><img id="t4" src="cement3_2.jpeg" alt="bricks"/></div><div class="thumb-label">CONCRETE</div></div>
+  <div class="brand">SHARMA</div>
+  <div class="rule"><div class="rl"></div><div class="rd"></div><div class="rr"></div></div>
+  <div class="sub">CEMENT &amp; HARDWARE STORE</div>
+  <div class="loc"><span>KAMBAL DANGA · UDHAMPUR</span></div>
+  <div class="contact"><div class="clabel">CONTACT</div><div class="cnums">9622128720 · 9797560287<br>9419175521</div></div>
+</div></div></div>
+</div>
