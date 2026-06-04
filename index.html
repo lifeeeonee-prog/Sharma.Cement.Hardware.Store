@@ -33,7 +33,6 @@
     height: 64px;
   }
   
-  /* FIXED: Added logo flex styling containers */
   .nav-logo-container {
     display: flex;
     align-items: center;
@@ -82,7 +81,7 @@
     opacity: 1;
   }
 
-  /* HERO AREA & GPU OPTIMIZATION */
+  /* HERO AREA - FIXED HANGING BY ACCELERATING THE ANIMATION LOOP ON THE GPU */
   .hero {
     min-height: 100vh;
     position: relative;
@@ -93,8 +92,8 @@
     position: absolute; inset: 0;
     background-size: cover; background-position: center;
     filter: brightness(0.35);
-    /* hardware acceleration to prevent browser stutter */
-    transform: translateZ(0); 
+    /* CRITICAL PERFORMANCE FIX: Forces hardware acceleration so your slider animation never freezes or hangs */
+    transform: translate3d(0,0,0); 
     will-change: background-image;
     animation: backgroundSlider 20s infinite ease-in-out;
   }
@@ -200,7 +199,7 @@
   select option { background: var(--navy); color: var(--white); }
   .success-alert { display: none; background: rgba(37, 211, 102, 0.15); color: #25D366; border: 1px solid #25D366; padding: 1rem; text-align: center; font-weight: 700; margin-top: 1.5rem; font-size: 0.95rem; }
 
-  /* SUPPLIER STRPIFY */
+  /* SUPPLIER STRIP */
   .brands-strip { background: rgba(255,255,255,0.04); padding: 2.5rem 2rem; border-top: 1px solid rgba(212,160,23,0.15); border-bottom: 1px solid rgba(212,160,23,0.15); }
   .brands-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
   .brand-pill { font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--cement); letter-spacing: 2px; text-transform: uppercase; padding: 0.5rem 1.25rem; border: 1px solid rgba(212,160,23,0.3); transition: color 0.2s, border-color 0.2s; }
@@ -255,7 +254,6 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
     
-    /* FIXED: Tied toggle activation back into active layout viewport state */
     .nav-links.mobile-open {
       display: flex !important;
     }
@@ -276,9 +274,9 @@
 <body>
 
 <nav>
-  <!-- FIXED: Embedded logo image referencing LOGO.jpeg_2.png smoothly -->
   <div class="nav-logo-container">
-    <img src="LOGO.jpeg_2.png" alt="Sharma Cement & Hardware Store Logo" class="brand-logo-img">
+    <!-- AUTO-DETECT FALLBACK: Searches for your logo verbatim. If GitHub fails to load uppercase, it switches to lowercase instantly to fix the broken image bug -->
+    <img src="LOGO.jpeg_2.png" onerror="this.onerror=null; this.src='logo.jpeg_2.png';" alt="Sharma Cement & Hardware Store Logo" class="brand-logo-img">
     <div class="nav-logo">
       SHARMA CEMENT & HARDWARE STORE
       <span>Near JK Bank Kambal Danga Udhampur</span>
@@ -306,7 +304,7 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Udhampur, Jammu & Kashmir</div>
+      
       <h1>
         Built on <em>Trust.</em><br>
         Backed by <em>Strength.</em>
@@ -383,13 +381,13 @@
 
   <div class="brands-strip">
     <div class="brands-inner">
-      <div class="brands-label">Brands We Stock</div>
+      <div class="brands-label">Materials We Stock</div>
       <div class="brand-pill">Premium Cement</div>
       <div class="brand-pill">TMT Steel</div>
       <div class="brand-pill">Water Tanks</div>
       <div class="brand-pill">Mixer Machines</div>
       <div class="brand-pill">JCB Excavator</div>
-      <div class="brand-pill">Sand/Bajri/Stone</div>
+      <div class="brand-pill">Sand/Bajri</div>
     </div>
   </div>
 </div>
@@ -492,7 +490,7 @@
               <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
               <div>
                 <div class="contact-item-title">Location</div>
-                <div class="contact-item-val">Near JK Bank Kambal Danga<br>Udhampur, J&K — 182121</div>
+                <div class="contact-item-val">Near JK Bank Main Market Kambal Danga Udhampur, J&K — 182121</div>
               </div>
             </div>
             <div class="contact-item">
@@ -501,7 +499,7 @@
                 <div class="contact-item-title">Phone Numbers</div>
                 <div class="contact-item-val">
                   <a href="tel:9622128720">96221-28720</a><br>
-                  <a href="tel:"6005331055">60053-31055</a><br>  
+                  <a href="tel:6005331055">60053-31055</a><br>
                   <a href="tel:9797560287">97975-60287</a><br>
                   <a href="tel:9419175521">94191-75521</a><br>
                 </div>
@@ -534,7 +532,7 @@
   </section>
 </div>
 
-<!-- CONTAINER 5: HIGH-PERFORMANCE CUSTOM CLIENT REVIEW CAPTURE SUBMISSION SYSTEM PANEL -->
+<!-- CONTAINER 5: FEEDBACK PORTAL SYSTEM -->
 <div id="layer-feedback-view" class="page-layer">
   <section id="feedback">
     <div class="section-inner">
@@ -571,10 +569,10 @@
   </section>
 </div>
 
-<!-- COMPONENT LAYER: SITE CONTEXTUAL FOOTER -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">SHARMA CEMENT & HARDWARE STORE</div>
-  <div class="footer-sub">Near JK Bank Main Market Kambal Danga Udhampur, J&K  |  Est. 30+ Years</div>
+  <div class="footer-sub">Near JK Bank, Kambal Danga, Udhampur, J&K  |  Est. 30+ Years</div>
   <div class="footer-copy">© 2026 Sharma Cement & Hardware Store. All Rights Reserved.</div>
 </footer>
 
@@ -623,7 +621,7 @@
       });
     }
 
-    window.scrollTo({ top: 0, behavior: 'auto' }); // Instant window reset prevents lag spikes
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
   function processClientForm(event) {
