@@ -10,8 +10,8 @@
   :root {
     --gold: #D4A017;
     --gold-light: #F0C040;
-    --navy: #0D1B2A;
-    --navy-mid: #1A2E44;
+    --blue: #0D1B2A;
+    --light-blue: #1A2E44;
     --white: #FFFFFF;
     --off-white: #F5F0E8;
     --cement: #B8A898;
@@ -61,7 +61,16 @@
     position: absolute; inset: 0;
     background-size: cover; background-position: center;
     filter: brightness(0.35);
+    animation: backgroundSlider 15s infinite ease-in-out;
   }
+  
+  /* Rotating background for images 1, 2, and 4 */
+  @keyframes backgroundSlider {
+    0%, 100% { background-image: url('image_33e7f3.png'); } /* Image 1 */
+    33% { background-image: url('image_33ef19.png'); }    /* Image 2 */
+    66% { background-image: url('image_33f2f9.png'); }    /* Image 4 */
+  }
+
   .hero-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(135deg, rgba(13,27,42,0.7) 0%, rgba(13,27,42,0.3) 100%);
@@ -148,16 +157,14 @@
   /* ABOUT */
   #about { background: var(--navy-mid); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .about-img-wrap { position: relative; }
-  .about-img-wrap img { width: 100%; display: block; }
   .about-badge {
-    position: absolute; bottom: -1.5rem; right: -1.5rem;
     background: var(--gold); color: var(--navy);
-    padding: 1.5rem; text-align: center;
+    padding: 2rem; text-align: center;
     font-family: 'Oswald', sans-serif;
+    border-left: 4px solid var(--white);
   }
-  .about-badge-num { font-size: 2.5rem; font-weight: 700; line-height: 1; }
-  .about-badge-label { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-top: 0.2rem; }
+  .about-badge-num { font-size: 3.5rem; font-weight: 700; line-height: 1; }
+  .about-badge-label { font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-top: 0.5rem; }
   .about-features { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .about-feature {
     padding: 1.25rem;
@@ -169,13 +176,16 @@
 
   /* MATERIALS */
   #materials { background: var(--navy); }
-  .materials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .materials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
   .material-card {
     background: var(--navy-mid);
     border: 1px solid rgba(212,160,23,0.2);
     padding: 2rem;
     transition: border-color 0.2s, transform 0.2s;
     position: relative; overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .material-card::before {
     content: '';
@@ -189,22 +199,37 @@
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 1.25rem; font-size: 1.5rem;
   }
-  .material-card h3 { font-family: 'Oswald', sans-serif; font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600; }
-  .material-card p { font-size: 0.85rem; color: var(--cement); line-height: 1.7; }
+  .material-card h3 { font-family: 'Oswald', sans-serif; font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--white); }
+  .material-card p { font-size: 0.9rem; color: var(--cement); line-height: 1.7; margin-bottom: 1.25rem; }
   .material-tag {
     display: inline-block; margin-top: 1rem;
     background: rgba(212,160,23,0.15);
     color: var(--gold); font-size: 0.7rem;
     padding: 0.25rem 0.6rem; letter-spacing: 1.5px; text-transform: uppercase;
     font-family: 'Oswald', sans-serif; font-weight: 600;
+    align-self: flex-start;
   }
 
-  /* PHOTO SECTION */
-  #gallery { background: var(--navy-mid); padding: 5rem 2rem; }
-  .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 1100px; margin: 3rem auto 0; }
-  .gallery-grid img { width: 100%; display: block; transition: transform 0.3s; }
-  .gallery-grid img:hover { transform: scale(1.02); }
-  .gallery-caption { text-align: center; font-size: 0.8rem; color: var(--cement); letter-spacing: 1px; padding-top: 0.75rem; text-transform: uppercase; font-family: 'Oswald', sans-serif; }
+  /* Inline Component Photo Gallery Layout for Cards */
+  .card-image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.25rem;
+  }
+  .card-image-gallery img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border: 1px solid rgba(212,160,23,0.2);
+    transition: transform 0.2s;
+  }
+  .card-image-gallery img:hover {
+    transform: scale(1.04);
+    border-color: var(--gold);
+  }
 
   /* BRANDS */
   .brands-strip { background: rgba(255,255,255,0.04); padding: 2.5rem 2rem; border-top: 1px solid rgba(212,160,23,0.15); border-bottom: 1px solid rgba(212,160,23,0.15); }
@@ -269,8 +294,6 @@
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; }
-    .about-badge { right: 0; bottom: -1rem; }
-    .gallery-grid { grid-template-columns: 1fr; }
     .hero-stats { gap: 1.5rem; }
   }
 </style>
@@ -279,23 +302,18 @@
 
 <nav>
   <div class="nav-logo">
-    SHARMA CEMENT
-    <span>& HARDWARE STORE</span>
+    SHARMA CEMENT & HARDWARE STORE</span>
+       <span>Near JK Bank Kambal Danga Udhampur</span> 
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#materials">Materials</a></li>
-    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a class="nav-cta" href="https://api.whatsapp.com/send?phone=919622128720">WhatsApp Us</a>
-  <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex'; document.querySelector('.nav-links').style.flexDirection='column'; document.querySelector('.nav-links').style.position='absolute'; document.querySelector('.nav-links').style.top='64px'; document.querySelector('.nav-links').style.left='0'; document.querySelector('.nav-links').style.right='0'; document.querySelector('.nav-links').style.background='#0D1B2A'; document.querySelector('.nav-links').style.padding='1rem 2rem';">
-    <span></span><span></span><span></span>
   </div>
 </nav>
 
 <section class="hero" id="home">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">Udhampur, Jammu & Kashmir</div>
@@ -326,8 +344,8 @@
 </section>
 
 <div class="ticker">
-  <div class="ticker-inner" id="tickerInner">
-    <span class="ticker-item">Ambuja Kawach Cement</span>
+  <div class="ticker-inner">
+
     <span class="ticker-item">Adani Cement</span>
     <span class="ticker-item">TMT Bars</span>
     <span class="ticker-item">Sand & Bajri</span>
@@ -336,8 +354,6 @@
     <span class="ticker-item">Mixer Machines</span>
     <span class="ticker-item">Bricks & Blocks</span>
     <span class="ticker-item">Wholesale Prices</span>
-    <span class="ticker-item">Govt. Contractor Supply</span>
-    <span class="ticker-item">Ambuja Kawach Cement</span>
     <span class="ticker-item">Adani Cement</span>
     <span class="ticker-item">TMT Bars</span>
     <span class="ticker-item">Sand & Bajri</span>
@@ -346,18 +362,17 @@
     <span class="ticker-item">Mixer Machines</span>
     <span class="ticker-item">Bricks & Blocks</span>
     <span class="ticker-item">Wholesale Prices</span>
-    <span class="ticker-item">Govt. Contractor Supply</span>
+   
   </div>
 </div>
 
 <section id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-img-wrap">
-        <img src="" id="aboutImg" alt="Sharma Cement & Hardware Store — Our Shop">
+      <div>
         <div class="about-badge">
           <div class="about-badge-num">30+</div>
-          <div class="about-badge-label">Years in Business</div>
+          <div class="about-badge-label">Years of Undefeated Trust</div>
         </div>
       </div>
       <div>
@@ -371,15 +386,15 @@
           </div>
           <div class="about-feature">
             <div class="about-feature-title">Certified Quality</div>
-            <div class="about-feature-desc">Authorized distributor of Ambuja Kawach and Adani Cement.</div>
+          
           </div>
           <div class="about-feature">
             <div class="about-feature-title">On-Site Logistics</div>
             <div class="about-feature-desc">Heavy equipment fleets including JCB and transit mixers on call.</div>
           </div>
           <div class="about-feature">
-            <div class="about-feature-title">GST Registered</div>
-            <div class="about-feature-desc">Fully compliant — GST No: 01AFFPC7320H1Z5</div>
+           
+            
           </div>
         </div>
       </div>
@@ -390,12 +405,13 @@
 <div class="brands-strip">
   <div class="brands-inner">
     <div class="brands-label">Brands We Stock</div>
-    <div class="brand-pill featured">Ambuja Kawach</div>
+   
     <div class="brand-pill featured">Adani Cement</div>
     <div class="brand-pill">TMT Steel</div>
     <div class="brand-pill">Water Tanks</div>
     <div class="brand-pill">Mixer Machines</div>
-    <div class="brand-pill">JCB Equipment</div>
+    <div class="brand-pill">JCB Excavator</div>
+    <div class="brand-pill">Sand/Bajri</div>
   </div>
 </div>
 
@@ -405,60 +421,78 @@
     <h2 class="section-title">All Construction <em>Materials</em></h2>
     <p class="section-desc">Everything you need for a strong, durable structure — sourced directly, stocked in bulk, and available at wholesale prices.</p>
     <div class="materials-grid">
+      
       <div class="material-card">
-        <div class="material-icon">🏗️</div>
-        <h3>Premium Cement Stock</h3>
-        <p>Authorized stock of high-strength, water-resistant Ambuja Kawach and Adani Cement — optimized for strong foundations and structural layouts. Mazbooti jo paani ko bhi roke.</p>
-        <span class="material-tag">Wholesale Available</span>
+        <div>
+          <div class="material-icon"></div>
+          <h3>Premium Cement Stock</h3>
+          <p>Authorized stock of high-strength, water-resistant Ambuja Kawach and Adani Cement — optimized for strong foundations and structural layouts. Mazbooti jo paani ko bhi roke.</p>
+        </div>
+        <div>
+          <div class="card-image-gallery">
+            <img src="image_33f25a.png" alt="Premium Cement Inventory Stock - View 1">
+            <img src="image_33f5dd.png" alt="Premium Cement Inventory Stock - View 2">
+          </div>
+          <span class="material-tag">Wholesale Available</span>
+        </div>
       </div>
+      
       <div class="material-card">
-        <div class="material-icon">🔩</div>
-        <h3>TMT Bars & Steel</h3>
-        <p>Premium grade TMT reinforcement bars for concrete structures, columns, slabs, and heavy-duty civil engineering projects across the region.</p>
+        <div>
+          <div class="material-icon"></div>
+          <h3>TMT Bars & Steel</h3>
+          <p>Premium grade TMT reinforcement bars for concrete structures, columns, slabs, and heavy-duty civil engineering projects across the region.</p>
+        </div>
         <span class="material-tag">All Sizes</span>
       </div>
+      
       <div class="material-card">
-        <div class="material-icon">🪨</div>
-        <h3>Sand, Stone & Bajri</h3>
-        <p>Quality aggregate materials — washed sand, crushed stone, and bajri — for concrete mixing, plastering, and site preparation work.</p>
+        <div>
+          <div class="material-icon"></div>
+          <h3>Sand, Stone & Bajri</h3>
+          <p>Quality aggregate materials — washed sand, crushed stone, and bajri — for concrete mixing, plastering, and site preparation work.</p>
+        </div>
         <span class="material-tag">Bulk Supply</span>
       </div>
+      
       <div class="material-card">
-        <div class="material-icon">💧</div>
-        <h3>Water Tanks & Platforms</h3>
-        <p>Complete supply of water storage tanks and raised platform structures for residential, commercial, and industrial site requirements.</p>
-        <span class="material-tag">All Capacities</span>
+        <div>
+          <div class="material-icon"></div>
+          <h3>Water Tank &amp; Mixer Section</h3>
+          <p>Complete supply of heavy commercial water storage systems, heavy-duty commercial mixer machines, and custom raised platform units.</p>
+        </div>
+        <div>
+          <div class="card-image-gallery">
+            <img src="image_33f316.png" alt="Water Tank Product Showcase">
+            <img src="image_33f61c.png" alt="Mixer Machine Product Showcase">
+          </div>
+          <span class="material-tag">All Capacities</span>
+        </div>
       </div>
+      
       <div class="material-card">
-        <div class="material-icon">🚜</div>
-        <h3>Machinery Division</h3>
-        <p>Heavy-duty site machinery on hire — JCB excavators and transit mixer machines for large-scale excavation, leveling, and concrete work.</p>
-        <span class="material-tag">On-Site Hire</span>
+        <div>
+          <div class="material-icon"></div>
+          <h3>JCB Excavator Section</h3>
+          <p>Heavy-duty excavation units, commercial fleet support, trench diggers, and planetary mixers ready for deployment across multi-scale contract jobs.</p>
+        </div>
+        <div>
+          <div class="card-image-gallery">
+            <img src="image_33f5fb.png" alt="JCB Machinery Fleet Asset">
+            <img src="image_33f639.png" alt="Heavy Commercial Support Gear">
+          </div>
+          <span class="material-tag">On-Site Hire</span>
+        </div>
       </div>
+      
       <div class="material-card">
-        <div class="material-icon">🧱</div>
-        <h3>Bricks & Blocks</h3>
-        <p>Fire bricks, fly ash blocks, and standard red bricks available in all quantities at wholesale prices — delivered to your construction site.</p>
+        <div>
+          <div class="material-icon"></div>
+          <h3>Bricks & Blocks</h3>
+          <p>Fire bricks, fly ash blocks, and standard red bricks available in all quantities at wholesale prices — delivered to your construction site.</p>
+        </div>
         <span class="material-tag">All Types</span>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="gallery">
-  <div class="section-inner">
-    <div class="section-tag">Our Store</div>
-    <h2 class="section-title">See Our <em>Showroom</em></h2>
-    <p class="section-desc">Visit us at Kambal Danga, Udhampur to explore our full range of materials and get expert advice from our team.</p>
-  </div>
-  <div class="gallery-grid section-inner">
-    <div>
-      <img src="" id="galleryImg1" alt="Sharma Cement & Hardware Store Front">
-      <div class="gallery-caption">Sharma Office & Cement Store — Main Showroom</div>
-    </div>
-    <div>
-      <img src="" id="galleryImg2" alt="Sharma Hardware Store — Full Frontage">
-      <div class="gallery-caption">Full Product Range — Wholesale Yard, Udhampur</div>
     </div>
   </div>
 </section>
@@ -472,7 +506,7 @@
       <div>
         <div class="contact-info">
           <div class="contact-item">
-            <div class="contact-icon">📍</div>
+            <div class="contact-icon"></div>
             <div>
               <div class="contact-item-title">Location</div>
               <div class="contact-item-val">Near JK Bank, Kambal Danga,<br>Udhampur, J&K — 182121</div>
@@ -493,15 +527,13 @@
             <div class="contact-icon">✉️</div>
             <div>
               <div class="contact-item-title">Email</div>
-              <div class="contact-item-val"><a href="mailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>
+              <div class="contact-item-val"><a href="Emailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">💬</div>
             <div>
-              <div class="contact-item-title">WhatsApp</div>
-              <div class="contact-item-val"><a href="https://api.whatsapp.com/send?phone=919622128720">Chat on WhatsApp →</a></div>
-            </div>
+             
           </div>
         </div>
         <div class="contact-hours">
@@ -511,7 +543,7 @@
         </div>
       </div>
       <div class="map-wrap">
-        <div class="map-label">📍 Find Us on Map</div>
+        <div class="map-label"> Find Us on Map</div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.7347947036483!2d75.03814860889008!3d32.947732273482586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780498350633!5m2!1sen!2sin"
           allowfullscreen loading="lazy"
@@ -533,16 +565,6 @@
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
-
-<script>
-(function(){
-  var img1 = "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";
-  document.getElementById("heroBg").style.backgroundImage = "url('data:image/jpeg;base64," + img1 + "')";
-  document.getElementById("aboutImg").style.backgroundImage = "url('data:image/jpeg;base64," + img1 + "')";
-  document.getElementById("galleryImg1").src = "data:image/jpeg;base64," + img1;
-  document.getElementById("galleryImg2").src = "data:image/jpeg;base64," + img1;
-})();
-</script>
 
 </body>
 </html>
