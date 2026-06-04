@@ -6,7 +6,6 @@
 <title>Sharma Cement & Hardware Store | Udhampur, J&K</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<!-- Font Awesome icon set for interface stars and checkmarks -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root {
@@ -81,9 +80,9 @@
     animation: backgroundSlider 15s infinite ease-in-out;
   }
   @keyframes backgroundSlider {
-    0%, 100% { background-image: url('image_33e7f3.png'); }
-    33% { background-image: url('image_33ef19.png'); }
-    66% { background-image: url('image_33f2f9.png'); }
+    0%, 100% { background-image: url('background1.jpeg'); }
+    33% { background-image: url('background2.jpeg'); }
+    66% { background-image: url('background3.jpeg'); }
   }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,27,42,0.7) 0%, rgba(13,27,42,0.3) 100%); }
   .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
@@ -262,14 +261,12 @@
     <span>Near JK Bank Kambal Danga Udhampur</span>
   </div>
   
-  <!-- MOBILE MENU ACTION ICON BUTTON TRIGGER -->
   <div class="hamburger" id="mobileMenuBtn" onclick="toggleMobileMenu()">
     <span></span>
     <span></span>
     <span></span>
   </div>
 
-  <!-- NAVIGATION ACTION NAV ITEMS COMPONENT -->
   <ul class="nav-links" id="navLinksContainer">
     <li><a class="tab-btn active-tab" onclick="handleNavClick('home-view')">Home</a></li>
     <li><a class="tab-btn" onclick="handleNavClick('about-view')">About Us</a></li>
@@ -279,7 +276,6 @@
   </ul>
 </nav>
 
-<!-- CONTAINER 1: LANDING HOME VIEW PORTAL PANEL -->
 <div id="layer-home-view" class="page-layer active-layer">
   <section class="hero" id="home">
     <div class="hero-bg"></div>
@@ -326,7 +322,6 @@
   </div>
 </div>
 
-<!-- CONTAINER 2: STORY ABOUT DETAILS ROUTING LAYOUT VIEW -->
 <div id="layer-about-view" class="page-layer">
   <section id="about">
     <div class="section-inner">
@@ -373,7 +368,6 @@
   </div>
 </div>
 
-<!-- CONTAINER 3: MATERIALS INVENTORY STOCK PRODUCT INDEX GRID PANEL -->
 <div id="layer-materials-view" class="page-layer">
   <section id="materials">
     <div class="section-inner">
@@ -385,12 +379,12 @@
         <div class="material-card">
           <div>
             <h3>Premium Cement Stock</h3>
-            <p>Authorized stock of high-strength, water-resistant Cement — optimized for strong foundations and structural layouts.</p>
+            <p>Authorized stock of high-strength, water-resistant Ambuja Kawach and Adani Cement — optimized for strong foundations and structural layouts. Mazbooti jo paani ko bhi roke.</p>
           </div>
           <div>
             <div class="card-image-gallery">
-              <img src="image_33f25a.png" alt="Premium Cement Inventory Stock - View 1">
-              <img src="image_33f5dd.png" alt="Premium Cement Inventory Stock - View 2">
+              <img src="cement.jpeg" alt="Premium Cement Inventory Stock - View 1">
+              <img src="cement2.jpeg" alt="Premium Cement Inventory Stock - View 2">
             </div>
             <span class="material-tag">Wholesale Available</span>
           </div>
@@ -401,7 +395,13 @@
             <h3>TMT Bars & Steel</h3>
             <p>Premium grade TMT reinforcement bars for concrete structures, columns, slabs, and heavy-duty civil engineering projects across the region.</p>
           </div>
-          <span class="material-tag">All Sizes</span>
+          <div>
+            <div class="card-image-gallery">
+              <img src="TMT.jpeg" alt="TMT Reinforcement Bars">
+              <img src="TMT2.jpeg" alt="TMT Steel Inventory Bundles">
+            </div>
+            <span class="material-tag">All Sizes</span>
+          </div>
         </div>
         
         <div class="material-card">
@@ -417,24 +417,18 @@
             <h3>Water Tank & Mixer Section</h3>
             <p>Complete supply of heavy commercial water storage systems, heavy-duty commercial mixer machines, and custom raised platform units.</p>
           </div>
-          <div>
-            <div class="card-image-gallery">
-              <img src="image_33f316.png" alt="Water Tank Product Showcase">
-              <img src="image_33f61c.png" alt="Mixer Machine Product Showcase">
-            </div>
-            <span class="material-tag">All Capacities</span>
-          </div>
+          <span class="material-tag">All Capacities</span>
         </div>
         
         <div class="material-card">
           <div>
-            <h3>JCB Excavator </h3>
+            <h3>JCB Excavator Section</h3>
             <p>Heavy-duty excavation units, commercial fleet support, trench diggers, and planetary mixers ready for deployment across multi-scale contract jobs.</p>
           </div>
           <div>
             <div class="card-image-gallery">
-              <img src="image_33f5fb.png" alt="JCB Machinery Fleet Asset">
-              <img src="image_33f639.png" alt="Heavy Commercial Support Gear">
+              <img src="JCB.jpeg" alt="JCB Machinery Fleet Asset">
+              <img src="JCB2.jpeg" alt="Heavy Commercial Support Gear">
             </div>
             <span class="material-tag">On-Site Hire</span>
           </div>
@@ -445,14 +439,18 @@
             <h3>Bricks & Blocks</h3>
             <p>Fire bricks, fly ash blocks, and standard red bricks available in all quantities at wholesale prices — delivered to your construction site.</p>
           </div>
-          <span class="material-tag">All Types</span>
+          <div>
+            <div class="card-image-gallery">
+              <img src="cement3.jpeg" alt="Concrete Blocks and Bricks Stock">
+            </div>
+            <span class="material-tag">All Types</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- CONTAINER 4: GEOLOCATION ROUTING MAP INFO AND SCHEMATICS PANEL -->
 <div id="layer-find-view" class="page-layer">
   <section id="contact">
     <div class="section-inner">
@@ -475,7 +473,6 @@
                 <div class="contact-item-title">Phone Numbers</div>
                 <div class="contact-item-val">
                   <a href="tel:9622128720">96221-28720</a><br>
-                  <a href="tel:6005331055">60053-31055</a><br>
                   <a href="tel:9797560287">97975-60287</a><br>
                   <a href="tel:9419175521">94191-75521</a>
                 </div>
@@ -485,7 +482,7 @@
               <div class="contact-icon">✉️</div>
               <div>
                 <div class="contact-item-title">Email</div>
-                <div class="contact-item-val"><a href="Emailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>
+                <div class="contact-item-val"><a href="mailto:sharma.cement.hardware@gmail.com">sharma.cement.hardware@gmail.com</a></div>
               </div>
             </div>
           </div>
@@ -501,14 +498,13 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2118.7347947036483!2d75.03814860889008!3d32.947732273482586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391dd5f95a774f5b%3A0x6b78d971412cf36b!2sSharma%20Cement%20and%20Hardware%20Store!5e1!3m2!1sen!2sin!4v1780498350633!5m2!1sen!2sin"
             allowfullscreen loading="lazy"
             title="Sharma Cement & Hardware Store Location">
-          </iframe>
+          </table>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- CONTAINER 5: HIGH-PERFORMANCE CUSTOM CLIENT REVIEW CAPTURE SUBMISSION SYSTEM PANEL -->
 <div id="layer-feedback-view" class="page-layer">
   <section id="feedback">
     <div class="section-inner">
@@ -516,7 +512,6 @@
       <h2 class="section-title" style="text-align: center; margin-bottom: 2.5rem;">Customer <em>Feedback Portal</em></h2>
       
       <div class="feedback-box">
-        <!-- ACTION ELEMENT UPGRADED TO REDIRECT LOGS SECURELY VIA WEB3FORMS SYSTEM ENTRY -->
         <form id="submissionSystem" onsubmit="processClientForm(event)">
           <div class="input-item">
             <label for="clientName">Full Customer Name</label>
@@ -546,21 +541,18 @@
   </section>
 </div>
 
-<!-- COMPONENT LAYER: SITE CONTEXTUAL FOOTER -->
 <footer>
   <div class="footer-logo">SHARMA CEMENT & HARDWARE STORE</div>
   <div class="footer-sub">Near JK Bank, Kambal Danga, Udhampur, J&K  |  Est. 30+ Years</div>
   <div class="footer-copy">© 2026 Sharma Cement & Hardware Store. GST No: 01AFFPC7320H1Z5  ·  All Rights Reserved.</div>
 </footer>
 
-<!-- SYSTEM LEVEL: COMPONENT FLOATING TRANSIT TRIGGER LINK (WHATSAPP) -->
 <a class="whatsapp-fab" href="https://api.whatsapp.com/send?phone=919622128720" title="Chat on WhatsApp" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
 
-<!-- SYSTEM SCRIPTS FOR CORE TAB ROUTING ROUTINES -->
 <script>
   // Mobile navigation overlay display toggler
   function toggleMobileMenu() {
