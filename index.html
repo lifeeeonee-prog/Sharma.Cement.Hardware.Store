@@ -51,7 +51,28 @@
   .nav-cta:hover { background: #c44010; }
   .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); }
+<nav>
+  <div class="nav-logo">
+    SHARMA CEMENT & HARDWARE STORE[cite: 1]
+    <span>Near JK Bank Kambal Danga Udhampur</span>[cite: 1]
+  </div>
+  
+  <!-- THREE LINES HAMBURGER BUTTON -->
+  <div class="hamburger" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
+  <!-- NAVIGATION LINKS CONTAINER -->
+  <ul class="nav-links" id="navLinksContainer">
+    <li><a class="tab-btn active-tab" onclick="handleNavClick('home-view')">Home</a></li>
+    <li><a class="tab-btn" onclick="handleNavClick('about-view')">About Us</a></li>
+    <li><a class="tab-btn" onclick="handleNavClick('materials-view')">Materials</a></li>
+    <li><a class="tab-btn" onclick="handleNavClick('find-view')">Find Us</a></li>
+    <li><a class="tab-btn" onclick="handleNavClick('feedback-view')">Feedback</a></li>
+  </ul>
+</nav>
   /* MULTI-LAYER DISPLAY HANDLING */
   .page-layer {
     display: none;
@@ -329,12 +350,64 @@
   .footer-sub { font-size: 0.8rem; color: var(--cement); margin-top: 0.4rem; letter-spacing: 1px; }
   .footer-copy { margin-top: 1.5rem; font-size: 0.75rem; color: rgba(255,255,255,0.25); }
 
-  /* RESPONSIVE */
+ /* RESPONSIVE MOBILE NAVIGATION FIXES */
   @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
+    .hamburger { 
+      display: flex; 
+    }
+    <!-- CAROUSEL NAVIGATION ENGINE -->
+<script>
+  // Toggles the mobile three-lines dropdown menu
+  function toggleMobileMenu() {
+    const menu = document.getElementById('navLinksContainer');
+    menu.classList.toggle('mobile-open');
+  }
+
+  // Processes tab selection and automatically closes the mobile drawer
+  function handleNavClick(layerTargetId) {
+    // 1. Trigger your existing tab switching layout engine
+    openLayer(layerTargetId);
+    
+    // 2. Automatically collapse the mobile menu drawer after selection
+    const menu = document.getElementById('navLinksContainer');
+    menu.classList.remove('mobile-open');
+  }
+
+  // High performance layer routing logic
+  function openLayer(layerTargetId) {
+...
+    /* Transforms nav links into a clean mobile dropdown drawer */
+    .nav-links { 
+      display: none; 
+      flex-direction: column;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 100%;
+      background: rgba(13, 27, 42, 0.98);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem;
+      gap: 1.25rem !important;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Shows the menu drawer when active */
+    .nav-links.mobile-open {
+      display: flex;
+    }
+
+    .nav-links li {
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.5rem 0;
+      font-size: 1rem;
+    }
+
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-stats { gap: 1.5rem; }
     .google-rating-bar { flex-direction: column; align-items: flex-start; gap: 1rem; }
   }
 </style>
