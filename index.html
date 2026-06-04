@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharma Cement & Hardware Store</title>
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -293,6 +294,7 @@
 </head>
 <body>
 
+    <!-- Header Navigation Section -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -308,7 +310,9 @@
         </div>
     </header>
 
+    <!-- LAYER 1: HOME PAGE -->
     <div id="layer-home" class="page-layer active-layer">
+        <!-- Hero Section using background1.jpeg, background2.jpeg, background3.jpeg -->
         <div class="hero-slider">
             <div class="slide active-slide" style="background-image: url('background1.jpeg');"></div>
             <div class="slide" style="background-image: url('background2.jpeg');"></div>
@@ -320,6 +324,7 @@
         </div>
 
         <div class="container">
+            <!-- Google Maps Ratings Bar Layout -->
             <div class="rating-widget">
                 <div class="google-profile">
                     <i class="fa-brands fa-google google-icon"></i>
@@ -341,6 +346,7 @@
                 </div>
             </div>
 
+            <!-- Main Categories Cards Interface -->
             <h2 class="section-title">Our Operational Divisions</h2>
             <div class="grid-3">
                 <div class="card">
@@ -374,10 +380,10 @@
         </div>
     </div>
 
+    <!-- LAYER 2: CEMENT PORTFOLIO -->
     <div id="layer-cement" class="page-layer">
         <div class="container">
             <h2 class="section-title">Ambuja Kawach & Cement Supplies</h2>
-            <p style="text-align:center; max-width:700px; margin:-15px auto 40px;">Engineered waterproofing structural elements optimized for long-term foundational longevity against severe weathering matrices.</p>
             <div class="grid-3">
                 <div class="card">
                     <img src="cement.jpeg" alt="Adani Ambuja Bag">
@@ -404,6 +410,7 @@
         </div>
     </div>
 
+    <!-- LAYER 3: TMT STEEL SECTION -->
     <div id="layer-tmt" class="page-layer">
         <div class="container">
             <h2 class="section-title">Reinforced Thermomechanically Treated (TMT) Steel</h2>
@@ -411,7 +418,7 @@
                 <div class="card">
                     <img src="TMT.jpeg" alt="Close up bars">
                     <div class="card-body">
-                        <h3>High Ductility Fe-550D Ribbed Bars</h3>
+                        <h3>High Ductility Ribbed Bars</h3>
                         <p>Featuring highly defined external geometric rib designs ensuring uniform binding strength values throughout concrete configurations.</p>
                     </div>
                 </div>
@@ -426,6 +433,7 @@
         </div>
     </div>
 
+    <!-- LAYER 4: JCB MACHINERY & LOGISTICS -->
     <div id="layer-jcb" class="page-layer">
         <div class="container">
             <h2 class="section-title">Heavy Excavation Equipment Rentals</h2>
@@ -448,6 +456,7 @@
         </div>
     </div>
 
+    <!-- LAYER 5: FEEDBACK & REVIEW SYSTEMS -->
     <div id="layer-reviews" class="page-layer">
         <div class="container">
             <h2 class="section-title">Customer Feedback Portal</h2>
@@ -480,33 +489,32 @@
         </div>
     </div>
 
+    <!-- Footer Block -->
     <footer>
         <p>&copy; 2026 Sharma Cement & Hardware Store. All Rights Reserved.</p>
         <p style="font-size: 13px; color: #aaa; margin-top: 5px;">M/S VIR CHANDER SHARMA - Govt Contractor and General Order Supplier</p>
     </footer>
 
+    <!-- JavaScript Layers Controller logic -->
     <script>
         // Tab switcher function for navigating through layers
         function switchLayer(layerId) {
-            // Hide all layers
             const layers = document.querySelectorAll('.page-layer');
             layers.forEach(layer => layer.classList.remove('active-layer'));
 
-            // Remove active style classes from links
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => link.classList.remove('active'));
 
-            // Display current selected structural layer
             document.getElementById('layer-' + layerId).classList.add('active-layer');
             
-            // Set nav item highlighting
-            event.currentTarget.classList.add('active');
+            if(event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
             
-            // Scroll safely to top viewport layout
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // Home Banner Automatic Hero Slider Cycle logic
+        // Automatic Hero Banner Slider Cycle
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         
@@ -515,11 +523,11 @@
             slideIndex++;
             if (slideIndex > slides.length) { slideIndex = 1 }
             slides[slideIndex - 1].classList.add('active-slide');
-            setTimeout(rotateSlides, 4000); // Transitions safely every 4 seconds
+            setTimeout(rotateSlides, 4000); 
         }
         if(slides.length > 0) { setTimeout(rotateSlides, 4000); }
 
-        // Local Form Simulation handler
+        // Local Submission simulator
         function handleFeedbackSubmit(e) {
             e.preventDefault();
             document.getElementById('storeFeedbackForm').reset();
