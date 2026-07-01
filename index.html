@@ -41,10 +41,11 @@
   .brand-logo-img {
     width: 44px;
     height: 44px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 50%;
     border: 1.5px solid var(--gold);
     flex-shrink: 0;
+    background-color: var(--navy-mid);
   }
 
   .nav-logo {
@@ -82,6 +83,8 @@
   }
 
   /* HERO AREA - FIXED HANGING BY ACCELERATING THE ANIMATION LOOP ON THE GPU */
+  .hero { position: relative; width: 100%; min-height: 80vh; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-top: 64px;}
+  
   .hero-content { 
     position: relative; 
     z-index: 2; 
@@ -89,7 +92,7 @@
     max-width: 1100px; 
     margin: 0 auto; 
     padding: 6rem 2rem; 
-  }.
+  }
   .ticker { background: var(--navy); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); color: #FFFF00; padding: 0.6rem 0; overflow: hidden; }
   .ticker-item { font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
   .hero-bg {
@@ -107,7 +110,7 @@
     66% { background-image: url('background3.jpeg'); }
   }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,27,42,0.7) 0%, rgba(13,27,42,0.3) 100%); }
-  .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+  
   .hero-eyebrow {
     font-family: 'Oswald', sans-serif; font-size: 0.75rem;
     letter-spacing: 4px; color: var(--gold); text-transform: uppercase;
@@ -188,7 +191,6 @@
     display: inline-block; margin-top: 1rem; background: rgba(212,160,23,0.15);
     color: var(--gold); font-size: 0.7rem; padding: 0.25rem 0.6rem; letter-spacing: 1.5px;
     text-transform: uppercase; font-family: 'Oswald', sans-serif; font-weight: 600; align-self: flex-start;
- @media (max-width: 768px)
   }
   .card-image-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem; }
   .card-image-gallery img { width: 100%; height: 110px; object-fit: cover; border: 1px solid rgba(212,160,23,0.2); transition: transform 0.2s; }
@@ -209,11 +211,7 @@
   .brands-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
   .brand-pill { font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--cement); letter-spacing: 2px; text-transform: uppercase; padding: 0.5rem 1.25rem; border: 1px solid rgba(212,160,23,0.3); transition: color 0.2s, border-color 0.2s; }
   .brand-pill:hover { color: var(--gold); border-color: var(--gold); }
-  .brands-label { font-size: 0.7rem; letter-spacing: 3px; color: var(--cement); text-transform: uppercase; font-family: 'Oswald', sans-serif;
-                 .hero-content {
-      padding: 4rem 1.5rem;
-                 }
-    } }
+  .brands-label { font-size: 0.7rem; letter-spacing: 3px; color: var(--cement); text-transform: uppercase; font-family: 'Oswald', sans-serif; }
 
   /* CONTACT SCHEMATICS */
   #contact { background: var(--navy); }
@@ -276,6 +274,7 @@
       padding: 0.5rem 0;
       font-size: 1rem;
     }
+    .hero-content { padding: 4rem 1.5rem; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>
@@ -284,8 +283,8 @@
 
 <nav>
   <div class="nav-logo-container">
-    <!-- AUTO-DETECT FALLBACK: Searches for your logo verbatim. If GitHub fails to load uppercase, it switches to lowercase instantly to fix the broken image bug -->
-    <img src="LOGO.jpeg_2.png" onerror="this.onerror=null; this.src='logo.jpeg_2.png';" alt="Sharma Cement & Hardware Store Logo" class="brand-logo-img">
+    <!-- Updated with new provided logo -->
+    <img src="image_0.png" alt="Sharma Cement & Hardware Store Logo" class="brand-logo-img">
     <div class="nav-logo">
       SHARMA CEMENT & HARDWARE STORE
       <span>Near JK Bank Kambal Danga Udhampur</span>
